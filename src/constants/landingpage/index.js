@@ -57,16 +57,43 @@
       icon: "/assets/images/home/features/features-icon.svg",
       heading:"Accelerate growth",
       paragraph:"SS&C Blue Prism intelligent automation solutions, powered by AI and machine learning, will help you deliver against strategic business goals, at speed, allowing you to remain agile in the face of an ever-changing socio-economic landscape."
+    }
+  ];
+
+  const services = [
+    {
+      id:"service1",
+      icon: "/assets/images/home/services/service1.svg",
+      heading:"Vestibulum consequat luctus magna",
     },
     {
-      id:"feature4",
-      icon: "/assets/images/home/features/features-icon.svg",
-      heading:"Accelerate growth",
-      paragraph:"SS&C Blue Prism intelligent automation solutions, powered by AI and machine learning, will help you deliver against strategic business goals, at speed, allowing you to remain agile in the face of an ever-changing socio-economic landscape."
+      id:"service2",
+      icon: "/assets/images/home/services/service2.svg",
+      heading:"Vestibulum consequat luctus magna",
     },
+    {
+      id:"service3",
+      icon: "/assets/images/home/services/service3.svg",
+      heading:"Vestibulum consequat luctus magna",
+    },
+    {
+      id:"service4",
+      icon: "/assets/images/home/services/service4.svg",
+      heading:"Vestibulum consequat luctus magna",
+    },
+    {
+      id:"service5",
+      icon: "/assets/images/home/services/service5.svg",
+      heading:"Vestibulum consequat luctus magna",
+    },
+    {
+      id:"service6",
+      icon: "/assets/images/home/services/service1.svg",
+      heading:"Vestibulum consequat luctus magna",
+    }
   ];
   
 
   
-  export {navLinks, marqueeSlides, featuresCards};
+  export {navLinks, marqueeSlides, featuresCards, services};
   
