@@ -1,18 +1,29 @@
 import styled from "styled-components";
 
 export const  HeaderSection = styled.div`
-
-    height: 96px;
     width: 100%;
     position: fixed;
     z-index: 99999;
     top: 0;
     left: 0;
 
+    transition: all .3s ease;
+
+    &.scrolled{
+        background-color: #212036;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    }
+
     .header{
         display: flex;
         align-items: center;
         justify-content: space-between;
+        height: 96px;
+        padding: 15px 0;
+
+        @media screen and (max-width:991px){
+            height: 78px;
+        }
 
         .nav{
             display: flex;

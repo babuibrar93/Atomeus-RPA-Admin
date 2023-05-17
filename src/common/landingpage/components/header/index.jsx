@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {HeaderSection} from './styles'
 import {Link} from "react-router-dom";
 import {navLinks} from '../../../../constants/landingpage';
@@ -6,15 +6,32 @@ import {navLinks} from '../../../../constants/landingpage';
 import Container from 'react-bootstrap/Container';
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // cleanup function is responsible for removing the event listener when the component is unmounted or updated
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <HeaderSection>
+    <HeaderSection className={isScrolled ? 'scrolled' : ''}>
         <Container>
           <header className="header">
+            
             <Link to='/'>
-              <img height="80px" width="" src="/assets/images/header/header-logo.svg" alt="Site Logo" />
+              <img height="100%" width="" src="/assets/images/header/header-logo.svg" alt="Site Logo" />
             </Link>
 
-            <nav className='nav'>
+            <ul className='nav'>
               {navLinks.map((Link) => (
                 <li 
                 key={Link.id}
@@ -23,7 +40,7 @@ export default function Header() {
                   <a className="nav-link" href={`#${Link.id}`}>{Link.title}</a>
                 </li>
               ))}
-            </nav>
+            </ul>
 
             <div className="auth_icons">
                 <span className='separator'></span>
