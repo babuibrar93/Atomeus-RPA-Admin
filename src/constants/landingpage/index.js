@@ -19,7 +19,6 @@
     },
   ];
 
-
   const marqueeSlides = [
     {
       id:"slide1",
@@ -140,7 +139,27 @@
     }
   ]
   
+  const contactDetail = [
+    {
+      id:"info1",
+      icon:"/assets/images/home/contact/location.svg",
+      title:"Address",
+      info:"734 H,Bryan Burington,NC27215"
+    },
+    {
+      id:"info2",
+      icon:"/assets/images/home/contact/envelop.svg",
+      title:"E-mail",
+      info:"Example@mail.com"
+    },
+    {
+      id:"info3",
+      icon:"/assets/images/home/contact/phone.svg",
+      title:"Phone",
+      info:"(+806) 000 88 99"
+    }
+  ]
 
   
-  export {navLinks, marqueeSlides, featuresCards, services, services2,blogs};
+  export {navLinks, marqueeSlides, featuresCards, services, services2, blogs, contactDetail};
   

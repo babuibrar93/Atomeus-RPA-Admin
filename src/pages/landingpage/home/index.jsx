@@ -8,6 +8,9 @@ import Features from '../../../components/landingpage/home/features';
 import Services from '../../../components/landingpage/home/services';
 import Services2 from '../../../components/landingpage/home/services2';
 import Blogs from '../../../components/landingpage/home/blogs';
+import Contact from '../../../components/landingpage/home/contact';
+import Footer from '../../../common/landingpage/components/footer';
+
 
 function Home() {
   return (
@@ -19,6 +22,8 @@ function Home() {
       <Services/>
       <Services2/>
       <Blogs/>
+      <Contact/>
+      <Footer/>
     </HomePage>
   )
 }
