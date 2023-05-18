@@ -44,7 +44,7 @@ export const ContactFormWrapper = styled.div`
     .textarea{
         height: 109px;
         width: 100%;
-        background: #212036;
+        background-color: #212036;
         border: 1px solid #17162C;
         box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
         border-radius: 8px;

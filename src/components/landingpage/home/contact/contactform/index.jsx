@@ -41,17 +41,17 @@ function ContactForm() {
           {({ errors, touched }) => (
             <Form className="form_wrapper">
               <div className="field">
-                <Field name="Name" className="text-field mb-2" placeholder="Your name"/>
+                <Field name="Name" className={`text-field form-control mb-2 ${errors.Name && touched.Name ? 'error':'valid'}`} placeholder="Your name"/>
                 {errors.Name && touched.Name ? <div className="error-text">{errors.Name}</div> : null}
               </div>
 
               <div className="field">
-                <Field name="email" type="email" className="email-field mb-2" placeholder="Your email"/>
+                <Field name="email" type="email" className={`email-field form-control mb-2 ${errors.email && touched.email ? 'error':'valid'}`} placeholder="Your email"/>
                 {errors.email && touched.email ? <div className="error-text">{errors.email}</div> : null}
               </div>
 
               <div className="field">
-                <Field name="message" as="textarea" className="textarea mb-1" placeholder="Your message"/>
+                <Field name="message" as="textarea" className={`textarea form-control mb-1 ${errors.message && touched.message ? 'error':'valid'}`} placeholder="Your message"/>
                 {errors.message && touched.message ? (<div className="error-text">{errors.message}</div>) : null}
               </div>
 
