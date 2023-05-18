@@ -6,6 +6,8 @@ import Hero from '../../../components/landingpage/home/hero';
 import MarqueeSlider from '../../../components/landingpage/home/marqueeslider';
 import Features from '../../../components/landingpage/home/features';
 import Services from '../../../components/landingpage/home/services';
+import Services2 from '../../../components/landingpage/home/services2';
+
 
 function Home() {
   return (
@@ -15,6 +17,7 @@ function Home() {
       <MarqueeSlider/>
       <Features/>
       <Services/>
+      <Services2/>
     </HomePage>
   )
 }

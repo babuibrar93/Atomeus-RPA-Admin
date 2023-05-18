@@ -92,8 +92,28 @@
       heading:"Vestibulum consequat luctus magna",
     }
   ];
+
+  const services2 = [
+    {
+      id:"service1",
+      heading:"Automating",
+      paragraph:"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. "
+    },
+    {
+      id:"service2",
+      heading:"Business Process  Management",
+    },
+    {
+      id:"service3",
+      heading:"Robotic Process Automation",
+    },
+    {
+      id:"service4",
+      heading:"Digital",
+    }
+  ]
   
 
   
-  export {navLinks, marqueeSlides, featuresCards, services};
+  export {navLinks, marqueeSlides, featuresCards, services, services2};
   

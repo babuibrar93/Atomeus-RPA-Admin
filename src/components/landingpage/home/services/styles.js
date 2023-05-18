@@ -27,7 +27,7 @@ export const ServicesWrapper = styled.div`
             object-fit: contain;
             max-width: 544px;
             display: block;
-            /* margin: auto; */
+            margin: auto;
         }
     }
 

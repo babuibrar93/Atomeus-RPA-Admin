@@ -32,7 +32,7 @@ export const FeaturesWrapper = styled.div`
 
     .features-grid{
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(356px, 1fr));
         gap: 20px;
 
         margin-top: 30px;

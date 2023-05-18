@@ -134,7 +134,7 @@ export const  HeaderSection = styled.div`
 
             display: none;
 
-            width: 40px;
+            width: 35px;
             height: 30px;
             position: relative;
             -webkit-transform: rotate(0deg);
@@ -154,7 +154,7 @@ export const  HeaderSection = styled.div`
             span{
                 display: block;
                 position: absolute;
-                height: 5px;
+                height: 4px;
                 width: 100%;
                 background: #086A8F;
                 border-radius: 9px;
