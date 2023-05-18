@@ -8,6 +8,11 @@ export const ContactFormWrapper = styled.div`
     line-height: 64px;
     color: #FFFFFF;
     margin-bottom: 16px;
+
+    @media screen and (max-width:520px){
+        font-size: 32px;
+        line-height: 46px;
+    }
 }
 
 .contact-text{

@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { ContactFormWrapper } from "./styles";
 
 const SignupSchema = Yup.object().shape({
-  Name: Yup.string()
+    name: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
@@ -28,7 +28,7 @@ function ContactForm() {
 
         <Formik
           initialValues={{
-            Name: "",
+            name: "",
             email: "",
             message: "",
           }}
@@ -41,17 +41,17 @@ function ContactForm() {
           {({ errors, touched }) => (
             <Form className="form_wrapper">
               <div className="field">
-                <Field name="Name" className={`text-field form-control mb-2 ${errors.Name && touched.Name ? 'error':'valid'}`} placeholder="Your name"/>
-                {errors.Name && touched.Name ? <div className="error-text">{errors.Name}</div> : null}
+                <Field name="name" className={`text-field form-control mb-2 ${touched.name && !errors.name ? 'valid' : touched.name && errors.name ? 'error' : ''}`} placeholder="Your name"/>
+                {errors.name && touched.name ? <div className="error-text">{errors.name}</div> : null}
               </div>
 
               <div className="field">
-                <Field name="email" type="email" className={`email-field form-control mb-2 ${errors.email && touched.email ? 'error':'valid'}`} placeholder="Your email"/>
+                <Field name="email" type="email" className={`email-field form-control mb-2 ${touched.email && !errors.email ? 'valid' : touched.email && errors.email ? 'error' : ''}`} placeholder="Your email"/>
                 {errors.email && touched.email ? <div className="error-text">{errors.email}</div> : null}
               </div>
 
               <div className="field">
-                <Field name="message" as="textarea" className={`textarea form-control mb-1 ${errors.message && touched.message ? 'error':'valid'}`} placeholder="Your message"/>
+                <Field name="message" as="textarea" className={`textarea form-control mb-1 ${touched.message && !errors.message ? 'valid' : touched.message && errors.message ? 'error' : ''}`} placeholder="Your message"/>
                 {errors.message && touched.message ? (<div className="error-text">{errors.message}</div>) : null}
               </div>
 

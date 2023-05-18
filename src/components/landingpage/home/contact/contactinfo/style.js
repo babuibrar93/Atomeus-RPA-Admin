@@ -11,11 +11,33 @@ export const ContactInfoWrapper = styled.div`
 
   border-right: 1px solid rgba(255, 255, 255, 0.13);
 
+  @media screen and (max-width:991px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-right: none;
+  }
+
+  @media screen and (max-width:520px){
+      grid-template-columns: 1fr;
+  }
+
   .item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+
+    @media screen and (max-width:991px){
+      &:nth-child(1){
+        grid-column: 1/3;
+      }
+    }
+
+    @media screen and (max-width:520px){
+      &:nth-child(1){
+        grid-column: unset;
+      }
+    }
 
     .title {
       font-weight: 700;
