@@ -112,8 +112,35 @@
       heading:"Digital",
     }
   ]
+
+  const blogs = [
+    {
+      id:"blog1",
+      image:"/assets/images/home/blogs/blog1.png",
+      heading:"Etiam nec velit eu est nissim Cras id tempor magna consectetur.",
+      description:"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac",
+      link_text:"LEARN MORE",
+      link:"#"
+    },
+    {
+      id:"blog2",
+      image:"/assets/images/home/blogs/blog2.png",
+      heading:"Etiam nec velit eu est nissim Cras id tempor magna consectetur.",
+      description:"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac",
+      link_text:"LEARN MORE",
+      link:"#"
+    },
+    {
+      id:"blog3",
+      image:"/assets/images/home/blogs/blog3.png",
+      heading:"Etiam nec velit eu est nissim Cras id tempor magna consectetur.",
+      description:"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac",
+      link_text:"LEARN MORE",
+      link:"#"
+    }
+  ]
   
 
   
-  export {navLinks, marqueeSlides, featuresCards, services, services2};
+  export {navLinks, marqueeSlides, featuresCards, services, services2,blogs};
   

@@ -56,7 +56,7 @@ export const ServicesWrapper = styled.div`
 
     .services-grid{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(238px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
         justify-content: space-between;
         gap: 57px;
         margin-top: 32px;

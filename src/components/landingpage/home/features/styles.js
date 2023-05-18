@@ -42,11 +42,12 @@ export const FeaturesWrapper = styled.div`
         }
 
         .grid-card{
-            transition: all .3s ease;
+            transition: all .3s ease-in;
             border-radius: 8px;
             padding: 8px;
             &:hover{
                 background-color: #212036;
+                transform: translateY(-3px);
             }
 
             .heading{
