@@ -1,19 +1,17 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
-import Home from './pages/landingpage/home';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
+import Home from "./pages/landingpage/home";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
-    <Router >
-      <Home/>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </Router>
   );
 }
