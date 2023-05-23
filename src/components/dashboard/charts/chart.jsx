@@ -1,4 +1,6 @@
 import React from "react";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,9 +11,9 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import faker from "faker";
-import { Container } from "react-bootstrap";
 import { ChartWrapper } from "./style";
+import { data_FTE, data_NPS, options } from "./index";
+import { Container } from "react-bootstrap";
 
 ChartJS.register(
   CategoryScale,
@@ -22,51 +24,45 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  plugins: {
-    // title: {
-    //   display: true,
-    //   text: "Chart.js Bar Chart - Stacked",
-    // },
-  },
-  responsive: true,
-  scales: {
-    x: {
-      stacked: true,
-    },
-    y: {
-      stacked: true,
-    },
-  },
-};
-
-const labels = ["January", "February", "March", "April", "May", "June", "July", "July", "August", "September", "October", "November", "December"];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "#77B8D0",
-    },
-    {
-      label: "Dataset 2",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
-      backgroundColor: "#3287A7",
-    },
-  ],
-};
-
 const Chart = () => {
-  return <ChartWrapper>
-    <Container>
-      <div className="chartBorder">
-        <div className="heading-one">FTE per Bot per User</div>
-        <Bar options={options} data={data} />
+  const value = 0.40;
+
+  return (
+    <ChartWrapper>
+<Container>
+
+      <div className="containerClass">
+        <div className="chartBorder">
+          <div className="heading-one">FTE per Bot per User</div>
+          <div className="graph">
+
+          <span className="response-text">Number of users</span>
+
+          <Bar options={options} data={data_FTE} />
+          </div>
+        </div>
+
+        <div className="chartBorder-two">
+          <div style={{ width: 252, height: 252 }}>
+            <CircularProgressbar
+              value={value}
+              maxValue={1}
+              text={`${value * 100}%`}
+            />
+          </div>
+          <div className="bottom-graph">
+            <div className="heading-one">NPS Over Time</div>
+            <div className="graph-content">
+            <span className="response-text">Responses</span>
+              <Bar options={options} data={data_NPS} />
+              </div>
+            <div className="month-text">Month</div>
+          </div>
+        </div>
       </div>
-    </Container>
-  </ChartWrapper>;
+</Container>
+    </ChartWrapper>
+  );
 };
 
 export default Chart;

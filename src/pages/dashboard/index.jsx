@@ -4,8 +4,8 @@ import Chart from "../../components/dashboard/charts/chart";
 function Dashboard() {
   return (
     <>
-      <Card />
-      <Chart />
+    <Card />
+    <Chart />
     </>
   );
 }

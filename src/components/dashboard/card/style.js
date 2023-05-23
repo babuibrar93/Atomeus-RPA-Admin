@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 export const CardsWrapper = styled.div`
   padding-top: 72px;
   padding-bottom: 30px;
+  display: grid;
+  grid-template-columns: 272px calc(100% - 272px);
 
   .cards {
     display: flex;

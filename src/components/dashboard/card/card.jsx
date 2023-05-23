@@ -6,7 +6,9 @@ import { CardsWrapper } from "./style";
 const Card = () => {
   return (
     <CardsWrapper>
-      <Container>
+      <div>
+        
+      </div>
         <div className="cards">
           {userDetail?.map((user) => {
             return (
@@ -39,7 +41,6 @@ const Card = () => {
             );
           })}
         </div>
-      </Container>
     </CardsWrapper>
   );
 };
