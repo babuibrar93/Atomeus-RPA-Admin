@@ -12,11 +12,7 @@ export const CardsWrapper = styled.div`
     justify-content: space-between;
     padding: 24px;
     gap: 20px;
-
-    @media screen and (max-width: 300px) {
-        flex-direction: column;
-      }
-    
+    z-index: -1;
 }
 
 .card {
@@ -27,7 +23,7 @@ export const CardsWrapper = styled.div`
     gap: 20px;
     background: #212036;
     border: 1px solid #99A2AC;
-border-radius: 8px;
+    border-radius: 8px;
   }
 
   .card-content {
@@ -65,11 +61,11 @@ border-radius: 8px;
     }
 
     .percentage {
-font-weight: 500;
-font-size: 14px;
-line-height: 20px;
-text-align: center;
-color: #1FCB4F;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: #1FCB4F;
     }
 
     .low-percentage {
@@ -81,11 +77,10 @@ color: #1FCB4F;
     }
 
     .percentage-sub {
- 
-font-weight: 400;
-font-size: 14px;
-line-height: 150%;
-color: #99A2AC;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #99A2AC;
     }
   }
 

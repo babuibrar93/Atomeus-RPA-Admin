@@ -1,5 +1,7 @@
 import React from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import "react-circular-progressbar/dist/styles.css";
 import {
   Chart as ChartJS,
@@ -25,42 +27,62 @@ ChartJS.register(
 );
 
 const Chart = () => {
-  const value = 0.40;
+  const value = 0.4;
 
   return (
     <ChartWrapper>
-<Container>
+      <Container>
+        <div className="containerClass">
+          <div className="chartBorder">
+            <div className="top-side">
+              <div className="heading-one">FTE per Bot per User</div>
+              <div className="dropdown-class">
+                <img
+                  src="/assets/images/dashboard/calendar.svg"
+                  className="calendar-icon"
+                />
+                <DropdownButton id="dropdown-basic-button" title="Monthly">
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">
+                    Another action
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">
+                    Something else
+                  </Dropdown.Item>
+                </DropdownButton>
 
-      <div className="containerClass">
-        <div className="chartBorder">
-          <div className="heading-one">FTE per Bot per User</div>
-          <div className="graph">
-
-          <span className="response-text">Number of users</span>
-
-          <Bar options={options} data={data_FTE} />
-          </div>
-        </div>
-
-        <div className="chartBorder-two">
-          <div style={{ width: 252, height: 252 }}>
-            <CircularProgressbar
-              value={value}
-              maxValue={1}
-              text={`${value * 100}%`}
-            />
-          </div>
-          <div className="bottom-graph">
-            <div className="heading-one">NPS Over Time</div>
-            <div className="graph-content">
-            <span className="response-text">Responses</span>
-              <Bar options={options} data={data_NPS} />
+                <img
+                  src="/assets/images/dashboard/arrow-down.svg"
+                  className="arrow-down-icon"
+                />
               </div>
-            <div className="month-text">Month</div>
+            </div>
+            <div className="graph">
+              {/* <span className="response-text">Number of users</span> */}
+
+              <Bar options={options} data={data_FTE} />
+            </div>
+          </div>
+
+          <div className="chartBorder-two">
+            <div style={{ width: 252, height: 252 }}>
+              <CircularProgressbar
+                value={value}
+                maxValue={1}
+                text={`${value * 100}%`}
+              />
+            </div>
+            <div className="bottom-graph">
+              <div className="heading-one">NPS Over Time</div>
+              <div className="graph-content">
+                {/* <span className="response-text">Responses</span> */}
+                <Bar options={options} data={data_NPS} />
+              </div>
+              <div className="month-text">Month</div>
+            </div>
           </div>
         </div>
-      </div>
-</Container>
+      </Container>
     </ChartWrapper>
   );
 };

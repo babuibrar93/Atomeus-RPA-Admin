@@ -17,6 +17,39 @@ export const ChartWrapper = styled.div`
     padding: 50px;
     border-radius: 8px;
   }
+
+  .top-side {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-primary {
+    border: 1px solid #99A2AC;
+    border-radius: 8px;
+    background: #212036;
+    width: 141px;
+  }
+
+  .dropdown-class {
+    display: flex;
+    position: relative;
+    z-index: -1;
+  }
+
+  .calendar-icon {
+    position: absolute;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    top: 11px;
+    left: 11px;
+  }
+
+  .btn-primary:hover{
+    border: 1px solid #99A2AC;
+border-radius: 8px;
+background: #212036;
+  }
   
   .heading-one {
     padding-bottom: 20px;
@@ -37,8 +70,8 @@ export const ChartWrapper = styled.div`
   }
 
   .CircularProgressbar .CircularProgressbar-trail {
-    // stroke: #2C2B41;
-    // border: 28px solid red !important;
+    stroke: #35414f;
+    border: 28px solid #2C2B41;
   }
 
   .CircularProgressbar .CircularProgressbar-path {
@@ -74,5 +107,18 @@ export const ChartWrapper = styled.div`
     line-height: 18px;
     text-align: center;
     color: #99A2AC;
+  }
+
+  .arrow-down-icon {
+    position: absolute;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    top: 11px;
+    right: 11px;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
   }
 `;

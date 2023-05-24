@@ -50,7 +50,6 @@ export const NavbarWrapper = styled.div`
     border: 1px solid #99a2ac;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     border-radius: 8px;
-    // margin-left: 35rem;
     color: white;
     height: 44px;
     padding-left: 2rem !important;
@@ -60,6 +59,26 @@ export const NavbarWrapper = styled.div`
     position: absolute;
     padding: 0.48rem;
     z-index: 11;
-    // background:blue;
+  }
+
+  .right-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .right-items span {
+    color: #99A2AC;
+  }
+
+  .arrow-dropdown-gray {
+    width: 8px;
+    height: 5px;
+  }
+
+  .localization {
+    display: flex;
+    align-items: center;
+    gap: 3px;
   }
 `;

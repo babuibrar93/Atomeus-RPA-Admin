@@ -15,10 +15,10 @@ export const SidebarWrapper = styled.div`
     width: 78px;
   }
   .sidebar .logo-details {
-    height: 60px;
     width: 100%;
     display: flex;
     align-items: center;
+    padding: 15px 0;
   }
   .sidebar .logo-details i {
     font-size: 30px;
@@ -29,27 +29,43 @@ export const SidebarWrapper = styled.div`
     line-height: 50px;
   }
   .sidebar .logo-details .logo_name {
-    margin-top: 50px;
+    margin-top: 10px;
   }
   .sidebar.close .logo-details .logo_name {
     transition-delay: 0s;
     opacity: 0;
     pointer-events: none;
   }
+
   .sidebar .nav-links {
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 60px 0 150px 0;
+    padding: 20px 0 150px 0;
     overflow: auto;
-    margin: 30px;
-    gap: 30px;
+    // margin: 30px;
+    gap: 10px;
   }
 
-//   .sidebar .nav-links li:hover {
+  .sidebar-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 24px;
+    cursor: pointer;
+  }
 
-//     background: linear-gradient(90.11deg, rgba(48, 139, 173, 0.12) -0.27%, rgba(90, 164, 192, 0.24) 89.19%);
-//   }
+  .sidebar-items:hover {
+    background: linear-gradient(
+      90.11deg,
+      rgba(48, 139, 173, 0.12) -0.27%,
+      rgba(90, 164, 192, 0.24) 89.19%
+    );
+  }
+
+  .sidebar-items li .link_name:hover {
+    color: red;
+  }
 
   .sidebar .nav-links .items {
     display: flex;
@@ -109,7 +125,10 @@ export const SidebarWrapper = styled.div`
     transition: all 0.4s ease;
   }
 
-  background: linear-gradient(90.11deg, rgba(48, 139, 173, 0.12) -0.27%, rgba(90, 164, 192, 0.24) 89.19%);
+  .sidebar .nav-links li a .link_name:hover {
+    color: #f4f6f8;
+  }
+
   .sidebar.close .nav-links li a .link_name {
     opacity: 0;
     pointer-events: none;
