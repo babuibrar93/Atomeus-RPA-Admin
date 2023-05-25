@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import InputFeilds from "../../../components/inputFeilds/inputFeilds";
-import { LoginWrapper } from "../style";
+import { AuthWrapper } from "../style";
+import Footer from "../../../common/landingpage/components/footer";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,15 +16,16 @@ const Register = () => {
     setShowConfirmPassword(!state);
   };
   return (
-    <LoginWrapper>
+    <AuthWrapper>
       {/* <div className="firstEllipseDiv">
           <img src="/assets/images/auth/ellipse.svg" className="firstEllipse" />
         </div> */}
-      {/* <div className="secondEllipseDiv">
+      <div className="secondEllipseDiv">
           <img src="/assets/images/auth/ellipse_two.svg" className="secondEllipse" />
-        </div> */}
+        </div>
+<div className="registration">
 
-      <div className="loginForm">
+      <div className="authForm">
         <div className="welcomHeadings">
           <span className="first">WELCOME TO AUTOMEOUS</span>
           <span className="second">Create your account</span>
@@ -87,7 +89,9 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </LoginWrapper>
+      <Footer />
+</div>
+    </AuthWrapper>
   );
 };
 

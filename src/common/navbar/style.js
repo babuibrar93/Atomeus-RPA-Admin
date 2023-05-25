@@ -24,8 +24,6 @@ export const NavbarWrapper = styled.div`
     font-weight: 700;
     font-size: 16px;
     line-height: 150%;
-    // text-align: center;
-    // align-items: center;
     display: flex;
     align-items: center;
     justify-content: center;

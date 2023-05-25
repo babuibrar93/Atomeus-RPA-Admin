@@ -9,7 +9,9 @@ import Login from "./pages/Auth/loginForm/login";
 import ForgetPassword from "./pages/Auth/forgetPassword/forgetPassword";
 import ResetPassword from "./pages/Auth/resetPassword/resetPassword";
 import Register from "./pages/Auth/registerForm/registerForm";
-import Footer from "./common/landingpage/components/footer";
+import WatchDemo from "./pages/demo";
+import DataTable from "./components/management/userManagement/userManagement";
+import RobootManagement from "./components/management/robootManagement/robootManagement";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       window.location.pathname !== "/register" &&
       window.location.pathname !== "/login" &&
       window.location.pathname !== "/forget-password" &&
+      window.location.pathname !== "/watch-demo" &&
+      window.location.pathname !== "/dataTable" &&
       window.location.pathname !== "/reset-password" ? (
         <>
           <Sidebar />
@@ -32,10 +36,11 @@ function App() {
           <Route exact path="/forget-password" element={<ForgetPassword />} />
           <Route exact path="/reset-password" element={<ResetPassword />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/watch-demo" element={<WatchDemo />} />
+          <Route exact path="/dataTable" element={<RobootManagement />} />
         </Routes>
       </Router>
 
-      {/* <Footer /> */}
     </>
   );
 }

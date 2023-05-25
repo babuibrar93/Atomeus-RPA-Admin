@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 
-export const LoginWrapper = styled.div`
+export const AuthWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 55rem;
   .firstEllipseDiv {
     position: relative;
   }
@@ -21,7 +24,13 @@ export const LoginWrapper = styled.div`
     top: -53rem;
   }
 
-  .loginForm {
+  .registration {
+    display: flex;
+    flex-direction: column;
+    gap: 55rem;
+  }
+
+  .authForm {
     display: flex;
     flex-direction: column;
     padding: 24px;

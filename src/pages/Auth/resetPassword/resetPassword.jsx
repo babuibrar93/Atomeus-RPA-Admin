@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import InputFeilds from "../../../components/inputFeilds/inputFeilds";
-import { LoginWrapper } from "../style";
+import { AuthWrapper } from "../style";
 
 const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,14 +16,14 @@ const ResetPassword = () => {
   };
 
   return (
-    <LoginWrapper>
+    <AuthWrapper>
       {/* <div className="firstEllipseDiv">
         <img src="/assets/images/auth/ellipse.svg" className="firstEllipse" />
       </div> */}
       {/* <div className="secondEllipseDiv">
         <img src="/assets/images/auth/ellipse_two.svg" className="secondEllipse" />
       </div> */}
-      <div className="loginForm">
+      <div className="authForm">
         <div className="brand">
           <img src="/assets/images/auth/logo.svg" className="logoImg" />
           <span className="companyName">ATOMEUS</span>
@@ -80,7 +80,7 @@ const ResetPassword = () => {
           </div>
         </div>
       </div>
-    </LoginWrapper>
+    </AuthWrapper>
   );
 };
 
