@@ -1,63 +1,128 @@
-import * as React from "react";
-import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
+import React, { useState } from "react";
 import { TableWrapper } from "../style";
+import { userData } from "..";
+import UserModal from "../../modal/userModal/user";
+import { useNavigate } from "react-router-dom";
 
-const columns = [
-    { field: "name", headerName: "Name", width: 130 },
-    { field: "noOfBoots", headerName: "No of Boots", width: 70 },
-    { field: "role", headerName: "Role", width: 90 },
-  {
-    field: "lastLogin",
-    headerName: "Last Login",
-    type: "number",
-    width: 130,
-  },
-  {
-    field: "status",
-    headerName: "Status",
-    // description: "This column has a value getter and is not sortable.",
-    // sortable: false,
-    width: 70,
-    // valueGetter: () =>
-    //   `${params.row.firstName || ""} ${params.row.lastName || ""}`,
-  },
-  {
-    field: "action",
-    // headerName: "Status",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 70,
-    // valueGetter: () =>
-    //   `${params.row.firstName || ""} ${params.row.lastName || ""}`,
-  },
-];
+const UserManagement = () => {
+  const navigate = useNavigate()
+  const [open, setOpen] = useState(false);
 
-const rows = [
-  { id: 1, name: "Snow", noOfBoots: 2, role: "Admin", lastLogin: "2023-01-03", status: "Active", action: "/assets/images/modal/cross.svg"},
-  { id: 2, lastName: "Lannister", firstName: "Cersei", age: 42 },
-  { id: 3, lastName: "Lannister", firstName: "Jaime", age: 45 },
-  { id: 4, lastName: "Stark", firstName: "Arya", age: 16 },
-  { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
-  { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
-  { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
-  { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
-  { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
-];
+  const handleAdduser = () => {
+    setOpen(true);
+    navigate("/back");
+  };
 
-export default function DataTable() {
   return (
-    <TableWrapper style={{ height: 400, width: "100%" }}>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
-          },
-        }}
-        pageSizeOptions={[5, 10]}
-        checkboxSelection
-      />
-    </TableWrapper>
+    <>
+      <div className="lagJa">{open && <UserModal />}</div>
+      <TableWrapper>
+        <div className="containerDiv">
+          <div className="row mt-5">
+            <div className="mainDiv col-md-12">
+              <div className="topDiv">
+                <div className="rightPart">
+                  <span>User Management</span>
+                </div>
+                <div className="rightPart">
+                  <form className="input-group w-auto my-auto d-none d-sm-flex search">
+                    <div className="searchIcon">
+                      <img src="/assets/images/sidebar/search.svg" />
+                    </div>
+                    <input
+                      autoComplete="off"
+                      type="search"
+                      className="form-control rounded searchField"
+                      placeholder="Search"
+                      style={{ minWidth: "344px" }}
+                    />
+                  </form>
+                  <button className="add-btn" onClick={handleAdduser}>
+                    <img src="/assets/images/table/plusIcon.svg" />
+                    <span>Add</span>
+                  </button>
+                </div>
+              </div>
+              <table id="example" className="table bottomDiv table-striped">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" className="checkthis" />
+                    </th>
+
+                    <th>Name</th>
+                    <th>No of Bots</th>
+                    <th>Role</th>
+                    <th>Last Login</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {userData?.map((data) => {
+                    return (
+                      <tr className="tableRows">
+                        <th>
+                          <input type="checkbox" className="checkthis" />
+                        </th>
+                        <td>{data.name}</td>
+                        <td>{data.noOfBoots}</td>
+                        <td>{data.role}</td>
+                        <td>{data.lastLogin}</td>
+                        <td>
+                          <div className="status">
+                            {data.status === "Active" ? (
+                              <img
+                                src="/assets/images/table/active.svg"
+                                style={{ width: 16.59, height: 16.67 }}
+                              />
+                            ) : (
+                              <img
+                                src="/assets/images/table/inactive.svg"
+                                style={{ width: 14.19, height: 14.19 }}
+                              />
+                            )}
+
+                            <span>{data.status}</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div className="actions">
+                            <img src="/assets/images/table/editIcon.svg" />
+                            <img src="/assets/images/table/moreVert.svg" />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+
+              <div className="pagination">
+                <button className="previousNext">
+                  <img src="assets/images/table/previous.svg" />
+                  <span>Previous</span>
+                </button>
+                <div className="numbering">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>...</button>
+                  <button>8</button>
+                  <button>9</button>
+                  <button>10</button>
+                </div>
+                <button className="previousNext">
+                  <span>Next</span>
+                  <img src="assets/images/table/next.svg" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TableWrapper>
+    </>
   );
-}
+};
+
+export default UserManagement;

@@ -29,6 +29,8 @@ ChartJS.register(
 const Chart = () => {
   const value = 0.4;
 
+  console.log(window.innerWidth)
+
   return (
     <ChartWrapper>
       <Container>

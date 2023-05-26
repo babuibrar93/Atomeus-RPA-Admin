@@ -11,7 +11,11 @@ import ResetPassword from "./pages/Auth/resetPassword/resetPassword";
 import Register from "./pages/Auth/registerForm/registerForm";
 import WatchDemo from "./pages/demo";
 import DataTable from "./components/management/userManagement/userManagement";
+import UserManagement from "./components/management/userManagement/userManagement";
 import RobootManagement from "./components/management/robootManagement/robootManagement";
+import ManageUser from "./pages/userManagement";
+import ManageRoboot from "./pages/userManagement/robootManagement";
+import BackFold from "./components/backFold/backFold";
 
 function App() {
   return (
@@ -19,9 +23,11 @@ function App() {
       {window.location.pathname !== "/" &&
       window.location.pathname !== "/register" &&
       window.location.pathname !== "/login" &&
+      window.location.pathname !== "/back" &&
       window.location.pathname !== "/forget-password" &&
       window.location.pathname !== "/watch-demo" &&
-      window.location.pathname !== "/dataTable" &&
+      window.location.pathname !== "/userManagement" &&
+      window.location.pathname !== "/robootManagement" &&
       window.location.pathname !== "/reset-password" ? (
         <>
           <Sidebar />
@@ -30,6 +36,7 @@ function App() {
       ) : null}
       <Router>
         <Routes>
+          <Route exact path="/back" element={<BackFold />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
@@ -37,10 +44,14 @@ function App() {
           <Route exact path="/reset-password" element={<ResetPassword />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/watch-demo" element={<WatchDemo />} />
-          <Route exact path="/dataTable" element={<RobootManagement />} />
+          <Route exact path="/userManagement" element={<ManageUser />} />
+          <Route
+            exact
+            path="/robootManagement"
+            element={<ManageRoboot />}
+          />
         </Routes>
       </Router>
-
     </>
   );
 }

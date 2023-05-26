@@ -2,12 +2,16 @@ import React from "react";
 import { DemoWrapper } from "./style";
 import UserModal from "../modal/userModal/user";
 import RobootModal from "../modal/robootModal/robootModal";
+import BotModal from "../modal/botModal/botModal";
+import AssignRobootModal from "../modal/assignRobootModal/assignRobootModal";
 
 const Demo = () => {
   return (
     <DemoWrapper>
-      <UserModal />
+      {/* <UserModal /> */}
       {/* <RobootModal /> */}
+      {/* <BotModal /> */}
+      {/* <AssignRobootModal /> */}
 
       <div className="frame">
         <div>

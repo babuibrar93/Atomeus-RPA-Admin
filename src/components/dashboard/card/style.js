@@ -8,11 +8,13 @@ export const CardsWrapper = styled.div`
 
   .cards {
     display: flex;
-    flex-direction: row
+    // flex-direction: column;
     justify-content: space-between;
     padding: 24px;
     gap: 20px;
     z-index: -1;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {

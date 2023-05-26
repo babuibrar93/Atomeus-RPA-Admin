@@ -8,27 +8,30 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg fixed">
         <div className="container-fluid justify-content-between">
           <div className="d-flex">
-            <form className="input-group w-auto my-auto d-none d-sm-flex search">
-              <div className="searchIcon">
-                <img src="/assets/images/sidebar/search.svg" />
-              </div>
-              <input
-                autoComplete="off"
-                type="search"
-                className="form-control rounded searchField"
-                placeholder="Search"
-                style={{ minWidth: "361px" }}
-              />
-            </form>
+            {window.location.pathname == "/userManagement" ||
+            window.location.pathname == "/robootManagement" ? (
+              null
+            ) : <form className="input-group w-auto my-auto d-none d-sm-flex search">
+            <div className="searchIcon">
+              <img src="/assets/images/sidebar/search.svg" />
+            </div>
+            <input
+              autoComplete="off"
+              type="search"
+              className="form-control rounded searchField"
+              placeholder="Search"
+              style={{ minWidth: "361px" }}
+            />
+          </form>}
           </div>
 
           <ul className="navbar-nav flex-row right-items">
             <div className="localization">
-            <span >EN</span>
-            <img
-                  src="/assets/images/sidebar/arrow-dropdown-gray.svg"
-                  className="arrow-dropdown-gray"
-                />
+              <span>EN</span>
+              <img
+                src="/assets/images/sidebar/arrow-dropdown-gray.svg"
+                className="arrow-dropdown-gray"
+              />
             </div>
             <li className="nav-item me-3 me-lg-1">
               <a

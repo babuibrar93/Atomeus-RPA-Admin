@@ -2,6 +2,7 @@ import React from "react";
 import { ModalWrapper } from "../style";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -20,6 +21,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const UserModal = () => {
+  const navigate = useNavigate();
   return (
     <ModalWrapper>
       <div className="modal">
@@ -37,7 +39,11 @@ const UserModal = () => {
             </div>
           </div>
           <div className="crossIconDiv">
-            <img src="/assets/images/modal/cross.svg" className="crossIcon" />
+            <img
+              src="/assets/images/modal/cross.svg"
+              className="crossIcon"
+              onClick={() => navigate("/robootManagement")}
+            />
           </div>
         </div>
 
@@ -97,26 +103,23 @@ const UserModal = () => {
               <div className="field">
                 <span className="fieldLabels">Email</span>
 
-                <div className="emailFeild">
-                  <Field
-                    name="email"
-                    type="email"
-                    className={`email-field form-control mb-2 ${
-                      touched.email && !errors.email
-                        ? "valid"
-                        : touched.email && errors.email
-                        ? "error"
-                        : ""
-                    }`}
-                    placeholder="Your email"
-                  />
-                  <div className="emailDiv">
+                <Field
+                  name="email"
+                  type="email"
+                  className={`email-field form-control mb-2 ${
+                    touched.email && !errors.email
+                      ? "valid"
+                      : touched.email && errors.email
+                      ? "error"
+                      : ""
+                  }`}
+                  placeholder="Your email"
+                />
+                <div className="emailDiv">
                   <img
                     src="/assets/images/modal/rateOf.svg"
                     className="emailIcon"
                   />
-
-                    </div>
                 </div>
                 {errors.email && touched.email ? (
                   <div className="error-text">{errors.email}</div>
@@ -136,10 +139,22 @@ const UserModal = () => {
                   <option value="2">Two</option>
                   <option value="3">Three</option>
                 </select>
+
+                <div className="downArrowDiv">
+                  <img
+                    src="/assets/images/dashboard/arrow-down.svg"
+                    className="downArrowIcon"
+                  />
+                </div>
               </div>
 
               <div className="bottom">
-                <button className="cencel-btn">Cancel</button>
+                <button
+                  className="cencel-btn"
+                  onClick={() => navigate("/robootManagement")}
+                >
+                  Cancel
+                </button>
 
                 <button type="submit" className="submit-btn">
                   Send Invite

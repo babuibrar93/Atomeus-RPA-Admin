@@ -2,6 +2,7 @@ import React from "react";
 import { ModalWrapper } from "../style";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -20,6 +21,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const RobootModal = () => {
+  const navigate = useNavigate()
   return (
     <ModalWrapper>
       <div className="modal">
@@ -37,7 +39,7 @@ const RobootModal = () => {
             </div>
           </div>
           <div className="crossIconDiv">
-            <img src="/assets/images/modal/cross.svg" className="crossIcon" />
+            <img src="/assets/images/modal/cross.svg" className="crossIcon" onClick={() => navigate("/robootManagement")} />
           </div>
         </div>
 
@@ -57,23 +59,30 @@ const RobootModal = () => {
           {({ errors, touched }) => (
             <Form className="form_wrapper">
               <div className="field">
-                <label className="fieldLabels">Upload file</label>
-                <Field
-                  name="name"
-                  type="text"
-                  className={`text-field form-control mb-2 ${
-                    touched.name && !errors.name
-                      ? "valid"
-                      : touched.name && errors.name
-                      ? "error"
-                      : ""
-                  }`}
-                  placeholder="Source file"
+                <span className="fieldLabels">Upload file</span>
+                <input
+                  type="file"
+                  name="file-input"
+                  id="file-input"
+                  class="file-input__input"
                 />
-                {errors.name && touched.name ? (
-                  <div className="error-text">{errors.name}</div>
-                ) : null}
+                <label for="file-input">
+                  <span
+                    name="manual"
+                    for="file-input"
+                    className="file-field form-control mb-2"
+                  >
+                    Source file
+                  </span>
+                </label>
+                <div className="fileDiv">
+                  <img
+                    src="/assets/images/modal/file.svg"
+                    className="fileIcon"
+                  />
+                </div>
               </div>
+
               <div className="field">
                 <span className="fieldLabels">Manual</span>
 
@@ -135,7 +144,7 @@ const RobootModal = () => {
               </div>
 
               <div className="bottom">
-                <button className="cencel-btn">Cancel</button>
+                <button className="cencel-btn" onClick={() => navigate("/robootManagement")}>Cancel</button>
 
                 <button type="submit" className="submit-btn">
                   Add Roboot

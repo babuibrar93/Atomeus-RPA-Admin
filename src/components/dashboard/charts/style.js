@@ -5,7 +5,7 @@ export const ChartWrapper = styled.div`
   float: right;
   display: grid;
   grid-template-columns: 1120px calc(100% - 1120px);
-  
+
   .containerClass {
     display: flex;
     flex-direction: column;
@@ -121,4 +121,8 @@ background: #212036;
   .dropdown-toggle::after {
     display: none;
   }
+
+  @media only screen and (max-width:991px){
+    display: grid !important;
+    grid-template-columns: 716px calc(100% - 716px) !important;
 `;

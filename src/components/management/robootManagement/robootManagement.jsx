@@ -1,89 +1,128 @@
-import React from "react";
+import React, { useState } from "react";
 import { TableWrapper } from "../style";
+import { robootData, userData } from "..";
+import UserModal from "../../modal/userModal/user";
+import BackFold from "../../backFold/backFold";
+import { useNavigate } from "react-router-dom";
 
 const RobootManagement = () => {
-  return (
-    <TableWrapper>
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-md-12">
-            <table id="example" class="table table-striped">
-              <thead>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011/04/25</td>
-                  <td>$320,800</td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
-                  <td>Garrett Winters</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>63</td>
-                  <td>2011/07/25</td>
-                  <td>$170,750</td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
-                  <td>Ashton Cox</td>
-                  <td>Junior Technical Author</td>
-                  <td>San Francisco</td>
-                  <td>66</td>
-                  <td>2009/01/12</td>
-                  <td>$86,000</td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
-                  <td>Cedric Kelly</td>
-                  <td>Senior Javascript Developer</td>
-                  <td>Edinburgh</td>
-                  <td>22</td>
-                  <td>2012/03/29</td>
-                  <td>$433,060</td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="checkbox" class="checkthis" />
-                  </th>
-                  <td>Airi Satou</td>
-                  <td>Accountant</td>
-                  <td>Tokyo</td>
-                  <td>33</td>
-                  <td>2008/11/28</td>
-                  <td>$162,700</td>
-                </tr>
-              </tbody>
-            </table>
+  const handleAdduser = () => {
+    setOpen(true);
+    navigate("/back");
+  };
+
+  return (
+    <>
+      <div className="lagJa"></div>
+      <TableWrapper>
+        <div className="containerDiv">
+          <div className="row mt-5">
+            <div className="mainDiv col-md-12">
+              <div className="topDiv">
+                <div className="rightPart">
+                  <span>Robot Management</span>
+                </div>
+                <div className="rightPart">
+                  <form className="input-group w-auto my-auto d-none d-sm-flex search">
+                    <div className="searchIcon">
+                      <img src="/assets/images/sidebar/search.svg" />
+                    </div>
+                    <input
+                      autoComplete="off"
+                      type="search"
+                      className="form-control rounded searchField"
+                      placeholder="Search"
+                      style={{ minWidth: "344px" }}
+                    />
+                  </form>
+                  <button className="add-btn" onClick={handleAdduser}>
+                    <img src="/assets/images/table/plusIcon.svg" />
+                    <span>Add</span>
+                  </button>
+                </div>
+              </div>
+              <table id="example" className="table bottomDiv table-striped">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox" className="checkthis" />
+                    </th>
+
+                    <th>Name</th>
+                    <th>Version</th>
+                    <th>Usage Month</th>
+                    <th>Assigned to</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {robootData?.map((data) => {
+                    return (
+                      <tr className="tableRows">
+                        <th>
+                          <input type="checkbox" className="checkthis" />
+                        </th>
+                        <td>{data.name}</td>
+                        <td>{data.version}</td>
+                        <td>{data.userMonth}</td>
+                        <td>{data.assignTo}</td>
+                        <td>
+                          <div className="status">
+                            {data.status === "Active" ? (
+                              <img
+                                src="/assets/images/table/active.svg"
+                                style={{ width: 16.59, height: 16.67 }}
+                              />
+                            ) : (
+                              <img
+                                src="/assets/images/table/inactive.svg"
+                                style={{ width: 14.19, height: 14.19 }}
+                              />
+                            )}
+
+                            <span>{data.status}</span>
+                          </div>
+                        </td>
+                        <td>
+                          <div className="actions">
+                            <img src="/assets/images/table/editIcon.svg" />
+                            <img src="/assets/images/table/moreVert.svg" />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+
+              <div className="pagination">
+                <button className="previousNext">
+                  <img src="assets/images/table/previous.svg" />
+                  <span>Previous</span>
+                </button>
+                <div className="numbering">
+                  <button>1</button>
+                  <button>2</button>
+                  <button>3</button>
+                  <button>...</button>
+                  <button>8</button>
+                  <button>9</button>
+                  <button>10</button>
+                </div>
+                <button className="previousNext">
+                  <span>Next</span>
+                  <img src="assets/images/table/next.svg" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </TableWrapper>
+      </TableWrapper>
+    </>
   );
 };
 
