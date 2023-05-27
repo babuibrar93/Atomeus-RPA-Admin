@@ -4,6 +4,16 @@ export const TableWrapper = styled.div`
   .btn-group .btn {
     transition: background-color 0.3s ease;
   }
+  .moreIcon {
+    position: relative;
+  }
+  .main {
+    .moreVert {
+      position: absolute;
+      right: 0;
+      top: 24rem;
+    }
+  }
 
   .panel-table .panel-body {
     padding: 0;

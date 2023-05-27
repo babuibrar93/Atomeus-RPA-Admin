@@ -9,6 +9,7 @@ export const NavbarWrapper = styled.div`
     background: #212036;
     position: fixed;
     width: 100%;
+    z-index: 11;
   }
 
   .profile {

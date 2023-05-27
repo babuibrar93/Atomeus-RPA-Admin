@@ -2,7 +2,6 @@ import React from "react";
 import { ModalWrapper } from "../style";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -20,8 +19,10 @@ const SignupSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const RobootModal = () => {
-  const navigate = useNavigate()
+const RobootModal = ({ action }) => {
+  const handleModal = (arg) => {
+    action(arg);
+  };
   return (
     <ModalWrapper>
       <div className="modal">
@@ -39,7 +40,11 @@ const RobootModal = () => {
             </div>
           </div>
           <div className="crossIconDiv">
-            <img src="/assets/images/modal/cross.svg" className="crossIcon" onClick={() => navigate("/robootManagement")} />
+            <img
+              src="/assets/images/modal/cross.svg"
+              className="crossIcon"
+              onClick={() => handleModal(false)}
+            />
           </div>
         </div>
 
@@ -144,7 +149,12 @@ const RobootModal = () => {
               </div>
 
               <div className="bottom">
-                <button className="cencel-btn" onClick={() => navigate("/robootManagement")}>Cancel</button>
+                <button
+                  className="cencel-btn"
+                  onClick={() => handleModal(false)}
+                >
+                  Cancel
+                </button>
 
                 <button type="submit" className="submit-btn">
                   Add Roboot

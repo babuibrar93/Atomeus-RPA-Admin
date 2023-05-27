@@ -5,17 +5,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 import Sidebar from "./common/sidebar/sidebar";
 import Navbar from "./common/navbar/navbar";
-import Login from "./pages/Auth/loginForm/login";
-import ForgetPassword from "./pages/Auth/forgetPassword/forgetPassword";
-import ResetPassword from "./pages/Auth/resetPassword/resetPassword";
-import Register from "./pages/Auth/registerForm/registerForm";
+import Login from "./pages/Auth/login/login";
+import ForgetPassword from "./pages/Auth/forget-password/forget-password";
+import ResetPassword from "./pages/Auth/reset-password/reset-password";
+import Register from "./pages/Auth/register/register";
 import WatchDemo from "./pages/demo";
-import DataTable from "./components/management/userManagement/userManagement";
-import UserManagement from "./components/management/userManagement/userManagement";
-import RobootManagement from "./components/management/robootManagement/robootManagement";
-import ManageUser from "./pages/userManagement";
-import ManageRoboot from "./pages/userManagement/robootManagement";
-import BackFold from "./components/backFold/backFold";
+
+import ManageUser from "./pages/management/user-management";
+import ManageRoboot from "./pages/management/roboot-management";
 
 function App() {
   return (
@@ -23,7 +20,6 @@ function App() {
       {window.location.pathname !== "/" &&
       window.location.pathname !== "/register" &&
       window.location.pathname !== "/login" &&
-      window.location.pathname !== "/back" &&
       window.location.pathname !== "/forget-password" &&
       window.location.pathname !== "/watch-demo" &&
       window.location.pathname !== "/userManagement" &&
@@ -36,7 +32,6 @@ function App() {
       ) : null}
       <Router>
         <Routes>
-          <Route exact path="/back" element={<BackFold />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/login" element={<Login />} />
@@ -44,10 +39,10 @@ function App() {
           <Route exact path="/reset-password" element={<ResetPassword />} />
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/watch-demo" element={<WatchDemo />} />
-          <Route exact path="/userManagement" element={<ManageUser />} />
+          <Route exact path="/user-management" element={<ManageUser />} />
           <Route
             exact
-            path="/robootManagement"
+            path="/roboot-management"
             element={<ManageRoboot />}
           />
         </Routes>

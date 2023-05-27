@@ -121,7 +121,7 @@ export const ModalWrapper = styled.div`
         .emailDiv {
           position: absolute;
           right: 27px;
-          top: 25.4rem;
+          top: 26rem;
           display: flex;
           align-items: center;
           padding: 10px;
@@ -141,7 +141,7 @@ export const ModalWrapper = styled.div`
         .downArrowDiv {
           position: absolute;
           right: 27px;
-          top: 31.7rem;
+          top: 32.2rem;
           display: flex;
           align-items: center;
           padding: 10px;
@@ -245,6 +245,7 @@ export const ModalWrapper = styled.div`
         display: flex;
         gap: 24px;
         justify-content: space-evenly;
+        padding: 20px 30px;
 
         .cencel-btn {
           align-items: center;

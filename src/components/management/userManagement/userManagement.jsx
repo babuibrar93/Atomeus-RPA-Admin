@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import { TableWrapper } from "../style";
 import { userData } from "..";
-import UserModal from "../../modal/userModal/user";
-import { useNavigate } from "react-router-dom";
+import ModalComponent from "../../modal/modal";
 
 const UserManagement = () => {
-  const navigate = useNavigate()
   const [open, setOpen] = useState(false);
 
-  const handleAdduser = () => {
-    setOpen(true);
-    navigate("/back");
+  const handleModal = (arg) => {
+    setOpen(arg);
   };
 
   return (
     <>
-      <div className="lagJa">{open && <UserModal />}</div>
+      <div>{open && <ModalComponent show={true} action={handleModal} />}</div>
       <TableWrapper>
         <div className="containerDiv">
           <div className="row mt-5">
@@ -37,7 +34,7 @@ const UserManagement = () => {
                       style={{ minWidth: "344px" }}
                     />
                   </form>
-                  <button className="add-btn" onClick={handleAdduser}>
+                  <button className="add-btn" onClick={() => handleModal(true)}>
                     <img src="/assets/images/table/plusIcon.svg" />
                     <span>Add</span>
                   </button>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ManageUserWrapper } from '../style'
+import { ManageUserWrapper } from '../user-management/style'
 import Navbar from '../../../common/navbar/navbar'
 import Sidebar from '../../../common/sidebar/sidebar'
 import RobootManagement from '../../../components/management/robootManagement/robootManagement'

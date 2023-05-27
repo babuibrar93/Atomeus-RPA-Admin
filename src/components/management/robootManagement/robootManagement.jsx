@@ -1,22 +1,38 @@
 import React, { useState } from "react";
 import { TableWrapper } from "../style";
-import { robootData, userData } from "..";
-import UserModal from "../../modal/userModal/user";
-import BackFold from "../../backFold/backFold";
-import { useNavigate } from "react-router-dom";
+import { robootData } from "..";
+import ModalComponent from "../../modal/modal";
+import MoreVertModal from "../../modal/more-vert-modal";
 
 const RobootManagement = () => {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [openMore, setOpenMore] = useState(false);
 
-  const handleAdduser = () => {
-    setOpen(true);
-    navigate("/back");
+  const handleModal = (arg) => {
+    setOpen(arg);
+  };
+
+  const handleMoreVertModal = (previous) => {
+    setOpenMore(!previous);
   };
 
   return (
     <>
-      <div className="lagJa"></div>
+      <div className="main">
+        <div
+          className="moreVert"
+          style={{
+            position: "absolute",
+            right: "23px",
+            top: "17.3rem",
+            zIndex: 5,
+          }}
+        >
+          {openMore && <MoreVertModal />}
+        </div>
+        {open && <ModalComponent show={true} action={handleModal} />}
+      </div>
+
       <TableWrapper>
         <div className="containerDiv">
           <div className="row mt-5">
@@ -38,7 +54,7 @@ const RobootManagement = () => {
                       style={{ minWidth: "344px" }}
                     />
                   </form>
-                  <button className="add-btn" onClick={handleAdduser}>
+                  <button className="add-btn" onClick={() => handleModal(true)}>
                     <img src="/assets/images/table/plusIcon.svg" />
                     <span>Add</span>
                   </button>
@@ -90,7 +106,11 @@ const RobootManagement = () => {
                         <td>
                           <div className="actions">
                             <img src="/assets/images/table/editIcon.svg" />
-                            <img src="/assets/images/table/moreVert.svg" />
+                            <img
+                              src="/assets/images/table/moreVert.svg"
+                              onClick={() => handleMoreVertModal(openMore)}
+                              className="moreIcon"
+                            />
                           </div>
                         </td>
                       </tr>

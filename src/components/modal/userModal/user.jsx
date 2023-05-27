@@ -2,7 +2,6 @@ import React from "react";
 import { ModalWrapper } from "../style";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -20,8 +19,10 @@ const SignupSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const UserModal = () => {
-  const navigate = useNavigate();
+const UserModal = ({ action }) => {
+  const handleModal = (arg) => {
+    action(arg);
+  };
   return (
     <ModalWrapper>
       <div className="modal">
@@ -42,7 +43,7 @@ const UserModal = () => {
             <img
               src="/assets/images/modal/cross.svg"
               className="crossIcon"
-              onClick={() => navigate("/robootManagement")}
+              onClick={() => handleModal(false)}
             />
           </div>
         </div>
@@ -56,8 +57,7 @@ const UserModal = () => {
           }}
           validationSchema={SignupSchema}
           onSubmit={(values) => {
-            // same shape as initial values
-            console.log(values);
+            // console.log(values);
           }}
         >
           {({ errors, touched }) => (
@@ -151,7 +151,7 @@ const UserModal = () => {
               <div className="bottom">
                 <button
                   className="cencel-btn"
-                  onClick={() => navigate("/robootManagement")}
+                  onClick={() => handleModal(false)}
                 >
                   Cancel
                 </button>
