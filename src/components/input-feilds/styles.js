@@ -5,7 +5,7 @@ export const ContactFormWrapper = styled.div`
 .form_wrapper{
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    // gap: 24px;
 
 
     .text-field,

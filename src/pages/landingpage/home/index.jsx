@@ -2,13 +2,13 @@ import React from 'react';
 import { HomePage } from './styles';
 
 import Header from '../../../common/landingpage/components/header';
-import Hero from '../../../components/landingpage/home/hero';
-import MarqueeSlider from '../../../components/landingpage/home/marqueeslider';
-import Features from '../../../components/landingpage/home/features';
-import Services from '../../../components/landingpage/home/services';
-import Services2 from '../../../components/landingpage/home/services2';
-import Blogs from '../../../components/landingpage/home/blogs';
-import Contact from '../../../components/landingpage/home/contact';
+import Hero from '../../../components/landing-page/home/hero';
+import MarqueeSlider from '../../../components/landing-page/home/marquee-slider';
+import Features from '../../../components/landing-page/home/features';
+import Services from '../../../components/landing-page/home/services';
+import Services2 from '../../../components/landing-page/home/services2';
+import Blogs from '../../../components/landing-page/home/blogs';
+import Contact from '../../../components/landing-page/home/contact';
 import Footer from '../../../common/landingpage/components/footer';
 
 

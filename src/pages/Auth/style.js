@@ -127,7 +127,7 @@ export const AuthWrapper = styled.div`
         .eyeImg {
           position: absolute;
           right: 0;
-          bottom: 27px;
+          top: 21px;
           left: 21.5rem;
         }
       }

@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { Container } from "react-bootstrap";
 import { ContactFormWrapper } from "./styles";
 
 const SignupSchema = Yup.object().shape({
@@ -47,12 +46,12 @@ const InputFeilds = ({ type, name, placeholder }) => {
                 } `}
                 placeholder={placeholder}
               />
+            </div>
               {type === "email" && errors.email && touched.email ? (
                 <div className="error-text">{errors.email}</div>
               ) : type === "password" && errors.password && touched.password ? (
                 <div className="error-text">{errors.password}</div>
               ) : null}
-            </div>
           </Form>
         )}
       </Formik>

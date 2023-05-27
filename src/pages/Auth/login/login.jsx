@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import InputFeilds from "../../../components/inputFeilds/inputFeilds";
+import InputFeilds from "../../../components/input-feilds/input-feilds";
 import { AuthWrapper } from "../style";
 
 const Login = () => {
