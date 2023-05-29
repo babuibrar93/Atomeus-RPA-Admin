@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { TableWrapper } from "../style";
 import { robootData } from "..";
-import ModalComponent from "../../modal/modal";
 import MoreVertModal from "../../modal/more-vert-modal";
+import RobootModal from "../../modal//robootModal/robootModal";
 
 const RobootManagement = () => {
   const [open, setOpen] = useState(false);
@@ -28,9 +28,9 @@ const RobootManagement = () => {
             zIndex: 5,
           }}
         >
-          {openMore && <MoreVertModal />}
+          {openMore && <MoreVertModal action={handleMoreVertModal} />}
         </div>
-        {open && <ModalComponent show={true} action={handleModal} />}
+        {open && <RobootModal show={true} action={handleModal} />}
       </div>
 
       <TableWrapper>
@@ -63,8 +63,9 @@ const RobootManagement = () => {
               <table id="example" className="table bottomDiv table-striped">
                 <thead>
                   <tr>
-                    <th>
-                      <input type="checkbox" className="checkthis" />
+                    <th className="checkbox-wrapper">
+                      <input id="test" type="checkbox" className="checkthis" />
+                      <label htmlFor="test"></label>
                     </th>
 
                     <th>Name</th>
@@ -76,11 +77,16 @@ const RobootManagement = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {robootData?.map((data) => {
+                  {robootData?.map((data, index) => {
                     return (
-                      <tr className="tableRows">
-                        <th>
-                          <input type="checkbox" className="checkthis" />
+                      <tr className="tableRows" key={index}>
+                        <th className="checkbox-wrapper">
+                          <input
+                            id={index}
+                            type="checkbox"
+                            className="checkthis"
+                          />
+                          <label htmlFor={index}></label>
                         </th>
                         <td>{data.name}</td>
                         <td>{data.version}</td>

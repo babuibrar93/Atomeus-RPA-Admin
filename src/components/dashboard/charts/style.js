@@ -1,10 +1,10 @@
 import { styled } from "styled-components";
 
 export const ChartWrapper = styled.div`
-  padding: 34px;
-  float: right;
-  display: grid;
-  grid-template-columns: 1120px calc(100% - 1120px);
+  padding: 0 32px 32px 32px;
+  /* float: right; */
+  /* display: grid;
+  grid-template-columns: 1100px calc(100% - 1100px); */
 
   .containerClass {
     display: flex;
@@ -14,8 +14,17 @@ export const ChartWrapper = styled.div`
 
   .chartBorder {
     border: 1px solid #99a2ac;
-    padding: 50px;
+    padding: 41px 25px;
     border-radius: 8px;
+    height: 100%;
+    background: #212036;
+    .graph {
+      width: 100%;
+      canvas {
+        width: 100%;
+        height: 410px;
+      }
+    }
   }
 
   .top-side {
@@ -24,7 +33,7 @@ export const ChartWrapper = styled.div`
   }
 
   .btn-primary {
-    border: 1px solid #99A2AC;
+    border: 1px solid #99a2ac;
     border-radius: 8px;
     background: #212036;
     width: 141px;
@@ -45,12 +54,12 @@ export const ChartWrapper = styled.div`
     left: 11px;
   }
 
-  .btn-primary:hover{
-    border: 1px solid #99A2AC;
-border-radius: 8px;
-background: #212036;
+  .btn-primary:hover {
+    border: 1px solid #99a2ac;
+    border-radius: 8px;
+    background: #212036;
   }
-  
+
   .heading-one {
     padding-bottom: 20px;
     font-weight: 600;
@@ -61,29 +70,43 @@ background: #212036;
 
   .chartBorder-two {
     display: flex;
-    flex: direction: row;
+    flex-direction: row;
     justify-content: space-between;
     border: 1px solid #99a2ac;
-    padding: 50px;
-    align-items: center;
+    padding: 32px;
+    gap: 32px;
     border-radius: 8px;
+    background: #212036;
+
+    .leftPart {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+
+      .nps {
+        font-size: 18px;
+        line-height: 120%;
+        color: #f4f6f8;
+      }
+    }
   }
 
   .CircularProgressbar .CircularProgressbar-trail {
-    stroke: #35414f;
-    border: 28px solid #2C2B41;
+    stroke: #99A2AC;
+    border: 28px solid #2c2b41;
   }
 
   .CircularProgressbar .CircularProgressbar-path {
-    stroke: #45E8E1 !important;
+    stroke: #45e8e1 !important;
   }
 
   .CircularProgressbar .CircularProgressbar-text {
-    fill: #F4F6F8;
+    fill: #f4f6f8;
   }
 
   .bottom-graph {
-    width: 65%;
+    width: 100%;
+    /* height: 40vh; */
   }
 
   .response-text {
@@ -91,7 +114,7 @@ background: #212036;
     font-size: 12px;
     line-height: 18px;
     text-align: center;
-    color: #99A2AC;
+    color: #99a2ac;
     transform: rotate(-90deg);
   }
 
@@ -106,7 +129,7 @@ background: #212036;
     font-size: 12px;
     line-height: 18px;
     text-align: center;
-    color: #99A2AC;
+    color: #99a2ac;
   }
 
   .arrow-down-icon {
@@ -122,7 +145,10 @@ background: #212036;
     display: none;
   }
 
-  @media only screen and (max-width:991px){
-    display: grid !important;
-    grid-template-columns: 716px calc(100% - 716px) !important;
+  // @media only screen and (max-width:991px){
+  //   .containerClass {
+
+  //     display: grid !important;
+  //     grid-template-columns: 716px calc(100% - 716px) !important;
+  //   }
 `;

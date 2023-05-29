@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { SidebarWrapper } from "./style";
+import { sidebarData } from ".";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const [open, setOpen] = useState(true);
+  const navigate = useNavigate();
 
   return (
     <SidebarWrapper>
-      <div className={open ? "sidebar" : "sidebar close"}>
+      <div className="sidebar">
         <div className="logo-details">
           <i className="bx bxl-c-plus-plus"></i>
           <span className="logo_name">
@@ -14,93 +16,43 @@ const Sidebar = () => {
           </span>
         </div>
         <ul className="nav-links">
-          <div className="sidebar-items">
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/dashboard.svg"
-                    className="sidebar-images"
-                  />
-                  <span className="link_name">Dashboard</span>
-                </div>
-              </a>
-            </li>
-          </div>
-
-          <div className="sidebar-items">
-            {" "}
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/user.svg"
-                    className="sidebar-images"
-                  />
-                  <span className="link_name">User Management</span>
-                </div>
-              </a>
-            </li>
-          </div>
-
-          <div className="sidebar-items">
-            {" "}
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/roboot.svg"
-                    className="sidebar-images"
-                  />
-                  <span className="link_name">Robot Management</span>
-                </div>
-              </a>
-            </li>
-          </div>
-
-          <div className="sidebar-items">
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/manual.svg"
-                    className="sidebar-images"
-                  />
-                  <span className="link_name">Manuals</span>
-                </div>
-              </a>
-            </li>
-          </div>
-
-          <div className="sidebar-items">
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/support.svg"
-                    className="sidebar-images"
-                  />
-
-                  <span className="link_name">Support</span>
-                </div>
-              </a>
-            </li>
-          </div>
-
-          <div className="sidebar-items">
-            <li>
-              <a href="#">
-                <div className="items">
-                  <img
-                    src="/assets/images/sidebar/setting.svg"
-                    className="sidebar-images"
-                  />
-
-                  <span className="link_name">Setting</span>
-                </div>
-              </a>
-            </li>
-          </div>
+          {sidebarData?.map((data,index) => (
+            <div
+            key={index}
+              className={
+                window.location.pathname == data.path
+                  ? "sidebar-items-clicked"
+                  : "sidebar-items"
+              }
+              onClick={() => {
+                navigate(data.path);
+              }}
+            >
+              <li>
+                <a href="#">
+                  <div className="items">
+                    <img
+                      src={data.icon}
+                      className={
+                        window.location.pathname == data.path
+                          ? "sidebar-images-clicked"
+                          : "sidebar-images"
+                      }
+                    />
+                    <span
+                      className={
+                        window.location.pathname == data.path
+                          ? "link_name-clicked"
+                          : "link_name"
+                      }
+                    >
+                      {data.item}
+                    </span>
+                  </div>
+                </a>
+              </li>
+            </div>
+          ))}
         </ul>
       </div>
       {/* <section className="">

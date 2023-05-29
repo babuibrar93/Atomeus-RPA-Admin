@@ -10,12 +10,17 @@ const Login = () => {
     setShowPassword(!state);
   };
   return (
+    <div style={{background:"url(/assets/images/auth/background.jpg) no-repeat center center ",height:"100vh"}}>
+
     <AuthWrapper>
       {/* <div className="firstEllipseDiv">
           <img src="/assets/images/auth/ellipse.svg" className="firstEllipse" />
-        </div> */}
-      {/* <div className="secondEllipseDiv">
+        </div>
+      <div className="secondEllipseDiv">
           <img src="/assets/images/auth/ellipse_two.svg" className="secondEllipse" />
+        </div>
+        <div className="thirdEllipseDiv">
+          <img src="/assets/images/auth/ellipse_three.svg" className="thirdEllipse" />
         </div> */}
       <div className="authForm">
         <div className="brand">
@@ -71,6 +76,7 @@ const Login = () => {
         </div>
       </div>
     </AuthWrapper>
+    </div>
   );
 };
 

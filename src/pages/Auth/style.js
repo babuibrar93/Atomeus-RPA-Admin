@@ -4,24 +4,38 @@ export const AuthWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 55rem;
+  // background-image: url("/assets/images/auth/background.jpg");
+  // background-repeat: no-repeat;
+  // background-size: auto;
+  background:red;
+height: "100vh";
+
   .firstEllipseDiv {
     position: relative;
-  }
-  .firstEllipse {
-    position: absolute;
-    // width: 393.81px;
-    // height: 512.54px;
-    left: 549.82px;
-    top: 672.79px;
+    .firstEllipse {
+      position: absolute;
+      left: 17rem;
+      top: -7rem;
+    }
   }
 
   .secondEllipseDiv {
     position: relative;
+    .secondEllipse {
+      position: absolute;
+      right: -4rem;
+      top: -54.5rem;
+    }
   }
-  .secondEllipse {
-    position: absolute;
-    right: 0;
-    top: -53rem;
+
+  .thirdEllipseDiv {
+    position: relative;
+    .thirdEllipse {
+      position: absolute;
+      right: -5rem;
+      top: -110rem;
+      // border: 1px solid red;
+    }
   }
 
   .registration {
@@ -33,7 +47,7 @@ export const AuthWrapper = styled.div`
   .authForm {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 24px 24px 45px 24px;
     gap: 40px;
     position: absolute;
     width: 420px;
@@ -127,7 +141,7 @@ export const AuthWrapper = styled.div`
         .eyeImg {
           position: absolute;
           right: 0;
-          top: 21px;
+          top: 15px;
           left: 21.5rem;
         }
       }
@@ -141,11 +155,11 @@ export const AuthWrapper = styled.div`
           border: 1px solid #338bc2;
           box-shadow: 0px 0px 10px rgba(75, 255, 247, 0.5);
           border-radius: 50px;
-          padding: 12px 34.5px;
           font-weight: 400;
           font-size: 16px;
           line-height: 26px;
           color: #ffffff;
+          height: 42px;
         }
         .forgetPassword {
           float: right;

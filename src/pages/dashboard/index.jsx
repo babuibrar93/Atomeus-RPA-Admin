@@ -5,8 +5,14 @@ import {DashboardWrapper}  from "./style";
 function Dashboard() {
   return (
     <DashboardWrapper>
+      <div>
+        {/* sidebar */}
+      </div>
+      <div>
       <Card />
       <Chart />
+
+      </div>
     </DashboardWrapper>
   );
 }

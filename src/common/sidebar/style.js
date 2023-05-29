@@ -55,16 +55,32 @@ export const SidebarWrapper = styled.div`
     cursor: pointer;
   }
 
+  .sidebar-items-clicked {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 24px;
+    cursor: pointer;
+    background: linear-gradient(
+      90.11deg,
+      rgba(48, 139, 173, 0.12) -0.27%,
+      rgba(90, 164, 192, 0.24) 89.19%
+    );
+    color: white;
+
+    .sidebar-items-clicked .sidebar-images {
+      width: 18px;
+      height: 18px;
+      filter:  brightness(0) invert(1);
+    }
+  }
+
   .sidebar-items:hover {
     background: linear-gradient(
       90.11deg,
       rgba(48, 139, 173, 0.12) -0.27%,
       rgba(90, 164, 192, 0.24) 89.19%
     );
-  }
-
-  .sidebar-items li .link_name:hover {
-    color: red;
   }
 
   .sidebar .nav-links .items {
@@ -76,6 +92,13 @@ export const SidebarWrapper = styled.div`
     width: 18px;
     height: 18px;
   }
+
+  .sidebar .nav-links .items .sidebar-images-clicked {
+    width: 18px;
+    height: 18px;
+    filter:  brightness(0) invert(1);
+  }
+
   .sidebar.close .nav-links {
     overflow: visible;
   }
@@ -122,6 +145,14 @@ export const SidebarWrapper = styled.div`
     font-size: 16px;
     line-height: 19px;
     color: #99a2ac;
+    transition: all 0.4s ease;
+  }
+
+  .sidebar .nav-links li a .link_name-clicked {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f4f6f8;
     transition: all 0.4s ease;
   }
 

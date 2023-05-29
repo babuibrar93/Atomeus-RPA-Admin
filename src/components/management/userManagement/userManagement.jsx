@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TableWrapper } from "../style";
 import { userData } from "..";
-import ModalComponent from "../../modal/modal";
+import UserModal from "../../modal/userModal/user";
 
 const UserManagement = () => {
   const [open, setOpen] = useState(false);
@@ -12,7 +12,7 @@ const UserManagement = () => {
 
   return (
     <>
-      <div>{open && <ModalComponent show={true} action={handleModal} />}</div>
+      <div>{open && <UserModal show={true} action={handleModal} />}</div>
       <TableWrapper>
         <div className="containerDiv">
           <div className="row mt-5">
@@ -43,8 +43,9 @@ const UserManagement = () => {
               <table id="example" className="table bottomDiv table-striped">
                 <thead>
                   <tr>
-                    <th>
-                      <input type="checkbox" className="checkthis" />
+                    <th className="checkbox-wrapper">
+                      <input id="test" type="checkbox" className="checkthis" />
+                      <label htmlFor="test"></label>
                     </th>
 
                     <th>Name</th>
@@ -56,11 +57,16 @@ const UserManagement = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {userData?.map((data) => {
+                  {userData?.map((data, index) => {
                     return (
-                      <tr className="tableRows">
-                        <th>
-                          <input type="checkbox" className="checkthis" />
+                      <tr className="tableRows" key={index}>
+                        <th className="checkbox-wrapper">
+                          <input
+                            id={index}
+                            type="checkbox"
+                            className="checkthis"
+                          />
+                          <label htmlFor={index}></label>
                         </th>
                         <td>{data.name}</td>
                         <td>{data.noOfBoots}</td>

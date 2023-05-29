@@ -7,11 +7,11 @@ export const BotModalWrapper = styled.div`
   position: absolute;
   width: 420px;
   left: calc(50% - 420px / 2);
-  top: calc(60% - 480px / 2);
+  bottom: calc(10% - 480px / 2);
   background: #212036;
   border-radius: 8px;
   list-style: decimal !important;
-  
+
   .modal {
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@ export const BotModalWrapper = styled.div`
             width: 45px;
             height: 45px;
             padding: 12px;
-            background: #32CDC6;
+            background: #32cdc6;
             border-radius: 50%;
             color: #212036;
           }
@@ -95,7 +95,6 @@ export const BotModalWrapper = styled.div`
       }
     }
 
-
     .form_wrapper {
       display: flex;
       flex-direction: column;
@@ -121,7 +120,7 @@ export const BotModalWrapper = styled.div`
           color: #f4f6f8;
         }
 
-        .text-field{
+        .text-field {
           background: #2c2b41;
           border-radius: 4px;
           border: 1px solid #2c2b41;
@@ -155,89 +154,88 @@ export const BotModalWrapper = styled.div`
             justify-content: center;
           }
         }
-
       }
-      }
+    }
 
-      .bottom {
+    .bottom {
+      display: flex;
+      gap: 24px;
+      justify-content: space-evenly;
+
+      .submit-btn {
+        align-items: center;
         display: flex;
-        gap: 24px;
-        justify-content: space-evenly;
-
-        .submit-btn {
-          align-items: center;
-          display: flex;
-          background: #086a8f;
-          border: 1px solid #338bc2;
-          box-shadow: 0px 0px 10px rgba(75, 255, 247, 0.5);
-          border-radius: 50px;
-          padding: 12px 34.5px;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 26px;
-          color: #ffffff;
-          height: 32px;
-          width: fit-content;
-        }
-
-        .cencel-btn {
-          align-items: center;
-          display: flex;
-          background: #212036;
-          border: 1px solid #338bc2;
-          box-shadow: 0px 0px 10px rgba(75, 255, 247, 0.5);
-          border-radius: 50px;
-          padding: 12px 34.5px;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 26px;
-          color: #ffffff;
-          height: 32px;
-          width: fit-content;
-        }
+        background: #086a8f;
+        border: 1px solid #338bc2;
+        box-shadow: 0px 0px 10px rgba(75, 255, 247, 0.5);
+        border-radius: 50px;
+        padding: 12px 34.5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #ffffff;
+        height: 32px;
+        width: fit-content;
       }
+
+      .cencel-btn {
+        align-items: center;
+        display: flex;
+        background: #212036;
+        border: 1px solid #338bc2;
+        box-shadow: 0px 0px 10px rgba(75, 255, 247, 0.5);
+        border-radius: 50px;
+        padding: 12px 34.5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: #ffffff;
+        height: 32px;
+        width: fit-content;
+      }
+    }
 
     ol li {
-        display: inline-block;
-        margin: 3px 12px 3px 12px;
-        width: 200px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        list-style: decimal !important;
-        list-style-type: decimal;
-
+      display: inline-block;
+      margin: 3px 12px 3px 12px;
+      width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      list-style: decimal !important;
+      list-style-type: decimal;
     }
 
     .div-wrapper {
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      width: 100%;
+      max-width: 400px;
+      gap: 8px;
+      padding: 24px 16px;
+      background: #212036;
+      border-radius: 5px;
+
+      .list-wrapper {
         display: flex;
         flex-direction: column;
-        // align-items: center;
         width: 100%;
         max-width: 400px;
-        gap: 8px;
-        padding: 24px 16px;
-        background: #212036;
-        border-radius: 5px; 
+        gap: 9px;
+        padding: 9px 16px;
+        background: #2c2b41;
+        border-radius: 5px;
 
-        .list-wrapper {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 400px;
-            gap: 9px;
-            padding: 9px 16px;
-            background: #2C2B41;
-            border-radius: 5px; 
-
-            span {
-                display: flex;
-                gap: 8px;
-                font-weight: 400;
-font-size: 14px;
-line-height: 140%;
-color: #99A2AC;
-            }
+        span {
+          display: flex;
+          gap: 8px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+          color: #99a2ac;
         }
+      }
     }
-  `;
+  }
+`;

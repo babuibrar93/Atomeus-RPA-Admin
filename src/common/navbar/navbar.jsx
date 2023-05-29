@@ -8,8 +8,8 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg fixed">
         <div className="container-fluid justify-content-between">
           <div className="d-flex">
-            {window.location.pathname == "/userManagement" ||
-            window.location.pathname == "/robootManagement" ? (
+            {window.location.pathname == "/user-management" ||
+            window.location.pathname == "/roboot-management" ? (
               null
             ) : <form className="input-group w-auto my-auto d-none d-sm-flex search">
             <div className="searchIcon">

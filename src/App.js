@@ -17,6 +17,7 @@ import ManageRoboot from "./pages/management/roboot-management";
 function App() {
   return (
     <>
+      <Router>
       {window.location.pathname !== "/" &&
       window.location.pathname !== "/register" &&
       window.location.pathname !== "/login" &&
@@ -30,7 +31,6 @@ function App() {
           <Navbar />
         </>
       ) : null}
-      <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/register" element={<Register />} />
@@ -40,11 +40,7 @@ function App() {
           <Route exact path="/dashboard" element={<Dashboard />} />
           <Route exact path="/watch-demo" element={<WatchDemo />} />
           <Route exact path="/user-management" element={<ManageUser />} />
-          <Route
-            exact
-            path="/roboot-management"
-            element={<ManageRoboot />}
-          />
+          <Route exact path="/roboot-management" element={<ManageRoboot />} />
         </Routes>
       </Router>
     </>

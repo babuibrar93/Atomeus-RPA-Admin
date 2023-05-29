@@ -7,7 +7,7 @@ export const ModalWrapper = styled.div`
   position: absolute;
   width: 420px;
   left: calc(50% - 420px / 2);
-  top: calc(40% - 480px / 2);
+  // top: calc(40% - 480px / 2);
   background: #212036;
   border-radius: 8px;
 
