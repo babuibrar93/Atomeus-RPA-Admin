@@ -92,7 +92,7 @@ export const ChartWrapper = styled.div`
   }
 
   .CircularProgressbar .CircularProgressbar-trail {
-    stroke: #99A2AC;
+    stroke: #2C2B41;
     border: 28px solid #2c2b41;
   }
 
@@ -145,10 +145,28 @@ export const ChartWrapper = styled.div`
     display: none;
   }
 
-  // @media only screen and (max-width:991px){
-  //   .containerClass {
+  @media (max-width: 1200px) {
+    .progressBar {
+      padding-top: 0 !important;
+    }
+  }
+  @media (max-width: 900px) {
+    .chartBorder-two {
+      display: flex;
+      flex-direction: column !important;
+      justify-content: space-between;
+      border: 1px solid #99a2ac;
+      padding: 32px;
+      gap: 42px;
+      border-radius: 8px;
+      background: #212036;
+      align-items: center;
+    }
 
-  //     display: grid !important;
-  //     grid-template-columns: 716px calc(100% - 716px) !important;
-  //   }
+    .graph-content {
+      canvas {
+        width: 100% !important;
+      }
+    }
+  }
 `;

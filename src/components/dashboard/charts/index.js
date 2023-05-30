@@ -2,15 +2,34 @@ import faker from "faker";
 
 export const options = {
   type: "bar",
+  elements: {
+    point: {
+      radius: 18,
+    },
+    line: {
+      borderColor: "green",
+    },
+    bar: {
+      borderColor: "green",
+    },
+  },
   plugins: {
-    // title: {
-    //   display: true,
-    //   text: "Chart.js Bar Chart - Stacked",
-    // },
+    legend: {
+      display: true,
+      usePointStyle: true,
+      color: "rgb(255, 99, 132)",
+      lineWidth: 10,
+      labels: {
+        boxHeight: 8,
+        boxWidth: 8,
+        borderRadius: 4,
+        useBorderRadius: true,
+      },
+    },
   },
   layout: {
-    borderRadius: "10px"
-},
+    borderRadius: "10px",
+  },
   responsive: true,
   interaction: {
     intersect: false,
@@ -23,6 +42,8 @@ export const options = {
       stacked: true,
     },
   },
+  responsive: true,
+  legend: { position: "top" },
 };
 
 const labels = [
@@ -47,6 +68,9 @@ export const data_FTE = {
       label: "Users",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
       backgroundColor: "#77B8D0",
+      parsing: {
+        yAxisKey: "cogs",
+      },
     },
     {
       label: "Bots",
@@ -58,12 +82,12 @@ export const data_FTE = {
 
 export const data_NPS = {
   labels,
+
   datasets: [
     {
       label: "Promoters",
       data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
       backgroundColor: "#77B8D0",
-      borderRadius: "10px",
     },
     {
       label: "Passive",

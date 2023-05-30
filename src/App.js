@@ -23,8 +23,8 @@ function App() {
       window.location.pathname !== "/login" &&
       window.location.pathname !== "/forget-password" &&
       window.location.pathname !== "/watch-demo" &&
-      window.location.pathname !== "/userManagement" &&
-      window.location.pathname !== "/robootManagement" &&
+      window.location.pathname !== "/user-management" &&
+      window.location.pathname !== "/roboot-management" &&
       window.location.pathname !== "/reset-password" ? (
         <>
           <Sidebar />

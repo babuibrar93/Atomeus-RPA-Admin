@@ -13,7 +13,7 @@ const MoreVertModal = ({action}) => {
     <MoreVertWrapper>
       {open && <AssignRobootModal show={true} action={handleAssignModal} />}
 
-      <div className="more">
+      <div className="more" >
         <button className="moreContent" onClick={() => handleAssignModal(true)}>
           <img src="assets/images/table/tick.svg" />
           Assign

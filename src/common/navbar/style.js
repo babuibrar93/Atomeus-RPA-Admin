@@ -15,6 +15,7 @@ export const NavbarWrapper = styled.div`
   .profile {
     display: flex;
     gap: 10px;
+    align-items: center;
   }
 
   .profileInitial {
@@ -41,7 +42,7 @@ export const NavbarWrapper = styled.div`
 
   .search {
     position: relative;
-    margin-left: 17.5rem;
+    margin-left: 18.5rem;
   }
 
   .searchField {
@@ -67,7 +68,7 @@ export const NavbarWrapper = styled.div`
   }
 
   .right-items span {
-    color: #99A2AC;
+    color: #99a2ac;
   }
 
   .arrow-dropdown-gray {
@@ -79,5 +80,18 @@ export const NavbarWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 3px;
+  }
+
+  @media (max-width: 1200px) {
+    .search {
+      position: relative;
+      margin-left: 5.5rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .searchField {
+      min-width: 290px !important;
+    }
   }
 `;

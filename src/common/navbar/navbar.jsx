@@ -9,20 +9,20 @@ const Navbar = () => {
         <div className="container-fluid justify-content-between">
           <div className="d-flex">
             {window.location.pathname == "/user-management" ||
-            window.location.pathname == "/roboot-management" ? (
-              null
-            ) : <form className="input-group w-auto my-auto d-none d-sm-flex search">
-            <div className="searchIcon">
-              <img src="/assets/images/sidebar/search.svg" />
-            </div>
-            <input
-              autoComplete="off"
-              type="search"
-              className="form-control rounded searchField"
-              placeholder="Search"
-              style={{ minWidth: "361px" }}
-            />
-          </form>}
+            window.location.pathname == "/roboot-management" ? null : (
+              <form className="input-group w-auto my-auto d-none d-sm-flex search">
+                <div className="searchIcon">
+                  <img src="/assets/images/sidebar/search.svg" />
+                </div>
+                <input
+                  autoComplete="off"
+                  type="search"
+                  className="form-control rounded searchField"
+                  placeholder="Search"
+                  style={{ minWidth: "361px" }}
+                />
+              </form>
+            )}
           </div>
 
           <ul className="navbar-nav flex-row right-items">

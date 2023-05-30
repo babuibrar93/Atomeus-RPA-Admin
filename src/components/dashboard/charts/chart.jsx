@@ -53,9 +53,9 @@ const Chart = () => {
             </div>
           </div>
           <div className="graph">
-            {/* <span className="response-text">Number of users</span> */}
+            <span className="response-text">Number of users</span>
 
-            <Bar options={options} data={data_FTE} />
+            <div><Bar options={options} data={data_FTE} /></div>
           </div>
         </div>
 
@@ -63,7 +63,10 @@ const Chart = () => {
           <div className="leftPart">
             <div className="nps">NPS For Organization</div>
 
-            <div style={{ width: 252, height: 252, paddingTop: "60px" }}>
+            <div
+              style={{ width: 252, height: 252, paddingTop: "60px" }}
+              className="progressBar"
+            >
               <CircularProgressbar
                 value={value}
                 maxValue={1}

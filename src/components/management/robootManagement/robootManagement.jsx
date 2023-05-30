@@ -2,11 +2,33 @@ import React, { useState } from "react";
 import { TableWrapper } from "../style";
 import { robootData } from "..";
 import MoreVertModal from "../../modal/more-vert-modal";
+
 import RobootModal from "../../modal//robootModal/robootModal";
+import { MoreVert } from "@material-ui/icons";
+import { IconButton } from "@material-ui/core";
+import { MenuItem } from "@material-ui/core";
+import { Menu } from "@material-ui/core";
 
 const RobootManagement = () => {
   const [open, setOpen] = useState(false);
   const [openMore, setOpenMore] = useState(false);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const MyOptions = [
+    { icon: "assets/images/table/tick.svg", action: "Assign" },
+    { icon: "assets/images/auth/eye.svg", action: "View" },
+    { icon: "assets/images/table/delete.svg", action: "Delete" },
+  ];
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const openEL = Boolean(anchorEl);
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const handleModal = (arg) => {
     setOpen(arg);
@@ -23,8 +45,8 @@ const RobootManagement = () => {
           className="moreVert"
           style={{
             position: "absolute",
-            right: "23px",
-            top: "17.3rem",
+            right: "30px",
+            top: "20.6rem",
             zIndex: 5,
           }}
         >
@@ -109,14 +131,27 @@ const RobootManagement = () => {
                             <span>{data.status}</span>
                           </div>
                         </td>
+
                         <td>
                           <div className="actions">
                             <img src="/assets/images/table/editIcon.svg" />
-                            <img
-                              src="/assets/images/table/moreVert.svg"
-                              onClick={() => handleMoreVertModal(openMore)}
-                              className="moreIcon"
-                            />
+                            <div>
+                              <img
+                                src="/assets/images/table/moreVert.svg"
+                                // onClick={handleClick}
+                                onClick={() => handleMoreVertModal(openMore)}
+                                className="moreIcon"
+                              />
+                              {/* <Menu
+                                anchorEl={anchorEl}
+                                keepMounted
+                                onClose={handleClose}
+                                open={openEL}
+                                className="more"
+                              >
+                               <MoreVertModal action={handleMoreVertModal} />
+                              </Menu> */}
+                            </div>
                           </div>
                         </td>
                       </tr>

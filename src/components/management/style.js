@@ -76,7 +76,7 @@ export const TableWrapper = styled.div`
   }
 
   .containerDiv {
-    padding: 62px 24px 128px 24px;
+    padding: 62px 34px 128px 34px;
   }
 
   .mainDiv {
@@ -86,7 +86,7 @@ export const TableWrapper = styled.div`
     box-shadow: 0px 3px 35px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     overflow: auto;
-    padding: 28px 19px;
+    padding: 0 19px;
 
     .bottomDiv {
       .checkbox-wrapper {
@@ -234,6 +234,17 @@ export const TableWrapper = styled.div`
     background: #2d303e;
   }
 
+  .MuiList-root {
+    background-color: red !important;
+  }
+
+  .MuiPaper-elevation8 {
+    box-shadow: none;
+  }
+  /* .MuiPaper-root {
+    background-color: none;
+  } */
+
   .actions {
     display: flex;
     justify-content: space-evenly;
@@ -242,6 +253,30 @@ export const TableWrapper = styled.div`
     img {
       cursor: pointer;
     }
+
+    .more {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center;
+      align-items: flex-start;
+      padding: 24px 16px;
+      gap: 16px;
+
+      .moreContent {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        color: #e0e0e0;
+        display: flex;
+        gap: 11.44px;
+        width: 100%;
+        border-bottom: 1px solid #3b3e4e;
+        padding-bottom: 5px;
+        background: #2c2b41;
+        align-items: center;
+      }
+    }
   }
 
   .pagination {
@@ -249,7 +284,7 @@ export const TableWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 24px 16px;
+    padding: 25px 24px 24px 18px;
     width: 100%;
     height: 68px;
     border-radius: 10px;
@@ -289,6 +324,11 @@ export const TableWrapper = styled.div`
       border: 1px solid #d0d5dd;
       box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
       border-radius: 8px;
+    }
+  }
+  @media (max-width: 900px) {
+    .mainDiv {
+      padding: 28px 19px 45px 19px !important;
     }
   }
 `;

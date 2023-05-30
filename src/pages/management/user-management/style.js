@@ -5,4 +5,9 @@ export const ManageUserWrapper = styled.div`
 // padding-bottom: 30px;
 display: grid;
 grid-template-columns: 270px calc(100% - 270px);
+
+@media (max-width: 1200px) {
+    display: grid;
+grid-template-columns: 100%;
+  }
 `

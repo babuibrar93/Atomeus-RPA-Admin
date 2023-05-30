@@ -5,10 +5,23 @@ import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const [close, setClose] = useState(false);
+
+  const handleSidebar = (arg) => {
+    setClose(!arg);
+  };
 
   return (
     <SidebarWrapper>
       <div className="sidebar">
+        <div className="handBurger">
+          <div></div>
+          <div className="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
         <div className="logo-details">
           <i className="bx bxl-c-plus-plus"></i>
           <span className="logo_name">
@@ -16,9 +29,9 @@ const Sidebar = () => {
           </span>
         </div>
         <ul className="nav-links">
-          {sidebarData?.map((data,index) => (
+          {sidebarData?.map((data, index) => (
             <div
-            key={index}
+              key={index}
               className={
                 window.location.pathname == data.path
                   ? "sidebar-items-clicked"

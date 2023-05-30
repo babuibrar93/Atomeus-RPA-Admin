@@ -11,16 +11,41 @@ export const SidebarWrapper = styled.div`
     z-index: 100;
     transition: all 0.5s ease;
   }
-  .sidebar.close {
-    width: 78px;
+
+  .handBurger {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    .menu {
+      display: none;
+
+      cursor: pointer;
+      div {
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        margin: 6px 0;
+      }
+    }
   }
-  .sidebar .logo-details {
+
+  /* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 10px;
+    background: #212036;
+    z-index: 100;
+    transition: all 0.5s ease;
+  } */
+  .logo-details {
     width: 100%;
     display: flex;
     align-items: center;
     padding: 15px 0;
   }
-  .sidebar .logo-details i {
+  .logo-details i {
     font-size: 30px;
     color: #fff;
     height: 50px;
@@ -28,16 +53,16 @@ export const SidebarWrapper = styled.div`
     text-align: center;
     line-height: 50px;
   }
-  .sidebar .logo-details .logo_name {
+  /* .logo-details .logo_name {
     margin-top: 10px;
-  }
-  .sidebar.close .logo-details .logo_name {
+  } */
+  .close .logo-details .logo_name {
     transition-delay: 0s;
     opacity: 0;
     pointer-events: none;
   }
 
-  .sidebar .nav-links {
+  .nav-links {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -71,7 +96,7 @@ export const SidebarWrapper = styled.div`
     .sidebar-items-clicked .sidebar-images {
       width: 18px;
       height: 18px;
-      filter:  brightness(0) invert(1);
+      filter: brightness(0) invert(1);
     }
   }
 
@@ -96,7 +121,7 @@ export const SidebarWrapper = styled.div`
   .sidebar .nav-links .items .sidebar-images-clicked {
     width: 18px;
     height: 18px;
-    filter:  brightness(0) invert(1);
+    filter: brightness(0) invert(1);
   }
 
   .sidebar.close .nav-links {
@@ -299,8 +324,25 @@ export const SidebarWrapper = styled.div`
     font-size: 26px;
     font-weight: 600;
   }
-  @media (max-width: 420px) {
-    .sidebar.close .nav-links li .sub-menu {
+
+  @media (max-width: 1200px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 1px;
+      background: #212036;
+      z-index: 100;
+      transition: all 0.5s ease;
+    }
+    .handBurger {
+      .menu {
+        display: block;
+        padding: 10px;
+      }
+    }
+    .logo-details {
       display: none;
     }
   }
