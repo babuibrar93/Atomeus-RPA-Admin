@@ -64,7 +64,7 @@ const Chart = () => {
             <div className="nps">NPS For Organization</div>
 
             <div
-              style={{ width: 252, height: 252, paddingTop: "60px" }}
+              style={{ width: 252, height: 252}}
               className="progressBar"
             >
               <CircularProgressbar
@@ -77,7 +77,7 @@ const Chart = () => {
           <div className="bottom-graph">
             <div className="heading-one">NPS Over Time</div>
             <div className="graph-content">
-              {/* <span className="response-text">Responses</span> */}
+              <div className="response-text">Responses</div>
               <Bar options={options} data={data_NPS} />
             </div>
             <div className="month-text">Month</div>

@@ -2,10 +2,6 @@ import { styled } from "styled-components";
 
 export const ChartWrapper = styled.div`
   padding: 0 32px 32px 32px;
-  /* float: right; */
-  /* display: grid;
-  grid-template-columns: 1100px calc(100% - 1100px); */
-
   .containerClass {
     display: flex;
     flex-direction: column;
@@ -19,7 +15,9 @@ export const ChartWrapper = styled.div`
     height: 100%;
     background: #212036;
     .graph {
-      width: 100%;
+    width: 100%;
+      /* display: grid;
+grid-template-columns: 10% calc(100% - 10%); */
       canvas {
         width: 100%;
         height: 410px;
@@ -42,7 +40,6 @@ export const ChartWrapper = styled.div`
   .dropdown-class {
     display: flex;
     position: relative;
-    z-index: -1;
   }
 
   .calendar-icon {
@@ -92,7 +89,7 @@ export const ChartWrapper = styled.div`
   }
 
   .CircularProgressbar .CircularProgressbar-trail {
-    stroke: #2C2B41;
+    stroke: #2c2b41;
     border: 28px solid #2c2b41;
   }
 
@@ -105,8 +102,8 @@ export const ChartWrapper = styled.div`
   }
 
   .bottom-graph {
-    width: 100%;
-    /* height: 40vh; */
+    width: 72%;
+    padding: 0 120px;
   }
 
   .response-text {
@@ -120,7 +117,7 @@ export const ChartWrapper = styled.div`
 
   .graph-content {
     display: flex;
-    justify-content: end;
+    justify-content: center;
   }
 
   .month-text {
@@ -149,6 +146,10 @@ export const ChartWrapper = styled.div`
     .progressBar {
       padding-top: 0 !important;
     }
+    .bottom-graph {
+      width: 80% !important;
+      padding: 0 0 !important;
+    }
   }
   @media (max-width: 900px) {
     .chartBorder-two {
@@ -161,6 +162,11 @@ export const ChartWrapper = styled.div`
       border-radius: 8px;
       background: #212036;
       align-items: center;
+    }
+
+    .bottom-graph {
+      width: 100% !important;
+      padding: 0 0 !important;
     }
 
     .graph-content {

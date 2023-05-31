@@ -31,19 +31,42 @@ export const options = {
     borderRadius: "10px",
   },
   responsive: true,
+  barThickness: 32,
   interaction: {
     intersect: false,
   },
   scales: {
     x: {
       stacked: true,
+      grid: {
+        display: false,
+      },
     },
     y: {
       stacked: true,
+      grid: {
+        color: "#99A2AC",
+      },
     },
   },
   responsive: true,
   legend: { position: "top" },
+  annotation: {
+    annotations: [
+      {
+        type: "line",
+        mode: "horizontal",
+        scaleID: "y-axis-0",
+        value: 1,
+        borderColor: "red",
+        borderWidth: 1,
+        label: {
+          enabled: false,
+          content: "Test label",
+        },
+      },
+    ],
+  },
 };
 
 const labels = [
@@ -61,43 +84,54 @@ const labels = [
   "Dec",
 ];
 
+const labels_NPS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+];
+
 export const data_FTE = {
   labels,
   datasets: [
     {
       label: "Users",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 800 })),
       backgroundColor: "#77B8D0",
-      parsing: {
-        yAxisKey: "cogs",
-      },
+      borderRadius: 10,
     },
     {
       label: "Bots",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
+      data: labels.map(() => faker.datatype.number({ min: 0, max: 800 })),
       backgroundColor: "#3287A7",
+      borderRadius: 10,
     },
   ],
 };
 
 export const data_NPS = {
-  labels,
+  labels:labels_NPS,
 
   datasets: [
     {
       label: "Promoters",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
+      data: labels_NPS.map(() => faker.datatype.number({ min: 0, max: 50 })),
       backgroundColor: "#77B8D0",
+      borderRadius: 10,
     },
     {
       label: "Passive",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
+      data: labels_NPS.map(() => faker.datatype.number({ min: 0, max: 50 })),
       backgroundColor: "#3287A7",
+      borderRadius: 10,
     },
     {
       label: "Detractors",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 600 })),
+      data: labels_NPS.map(() => faker.datatype.number({ min: 0, max: 50 })),
       backgroundColor: "#B7EBFE",
+      borderRadius: 10,
     },
   ],
 };
