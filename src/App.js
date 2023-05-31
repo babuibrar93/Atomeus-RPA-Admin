@@ -17,19 +17,20 @@ function App() {
   return (
     <>
       <Router>
-      {window.location.pathname !== "/" &&
-      window.location.pathname !== "/register" &&
-      window.location.pathname !== "/login" &&
-      window.location.pathname !== "/forget-password" &&
-      window.location.pathname !== "/watch-demo" &&
-      window.location.pathname !== "/user-management" &&
-      window.location.pathname !== "/roboot-management" &&
-      window.location.pathname !== "/reset-password" ? (
-        <>
-          <Sidebar />
-          <Navbar />
-        </>
-      ) : null}
+        {window.location.pathname !== "/" &&
+        window.location.pathname !== "/dashboard" &&
+        window.location.pathname !== "/register" &&
+        window.location.pathname !== "/login" &&
+        window.location.pathname !== "/forget-password" &&
+        window.location.pathname !== "/watch-demo" &&
+        window.location.pathname !== "/user-management" &&
+        window.location.pathname !== "/roboot-management" &&
+        window.location.pathname !== "/reset-password" ? (
+          <>
+            <Sidebar />
+            <Navbar />
+          </>
+        ) : null}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/register" element={<Register />} />

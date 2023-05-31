@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TableWrapper } from "../style";
 import { userData } from "..";
 import UserModal from "../../modal/userModal/user";
+import Navbar from "../../../common/navbar/navbar";
 
 const UserManagement = () => {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ const UserManagement = () => {
       <div>{open && <UserModal show={true} action={handleModal} />}</div>
       <TableWrapper>
         <div className="containerDiv">
-          <div className="row mt-5">
+          <div className="row">
             <div className="mainDiv col-md-12">
               <div className="topDiv">
                 <div className="rightPart">

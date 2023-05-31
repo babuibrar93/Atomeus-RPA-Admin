@@ -1,13 +1,8 @@
 import { styled } from "styled-components";
 
 export const ManageUserWrapper = styled.div`
-// padding-top: 72px;
-// padding-bottom: 30px;
-display: grid;
-grid-template-columns: 270px calc(100% - 270px);
+  display: grid;
+  grid-template-columns: 272px calc(100% - 272px);
+  transition: all .3s ease;
 
-@media (max-width: 1200px) {
-    display: grid;
-grid-template-columns: 100%;
-  }
 `

@@ -7,7 +7,6 @@ const WatchDemo = () => {
   return (
     <WatchDemoWrapper>
       <Demo />
-      <Footer />
     </WatchDemoWrapper>
   )
 }

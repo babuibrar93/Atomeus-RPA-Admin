@@ -6,12 +6,8 @@ import { AuthWrapper } from "../style";
 const ForgetPassword = () => {
   return (
     <AuthWrapper>
-      {/* <div className="firstEllipseDiv">
-        <img src="/assets/images/auth/ellipse.svg" className="firstEllipse" />
-      </div> */}
-      {/* <div className="secondEllipseDiv">
-        <img src="/assets/images/auth/ellipse_two.svg" className="secondEllipse" />
-      </div> */}
+      <div className="registration">
+
       <div className="authForm">
         <div className="brand">
           <img src="/assets/images/auth/logo.svg" className="logoImg" />
@@ -37,6 +33,7 @@ const ForgetPassword = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </AuthWrapper>
   );

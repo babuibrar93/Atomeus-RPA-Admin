@@ -4,15 +4,12 @@ import UserModal from "../modal/userModal/user";
 import RobootModal from "../modal/robootModal/robootModal";
 import BotModal from "../modal/botModal/botModal";
 import AssignRobootModal from "../modal/assignRobootModal/assignRobootModal";
+import Footer from "../../common/landingpage/components/footer";
 
 const Demo = () => {
   return (
+    <div style={{background:"url(/assets/images/demo/watch-demo.jpg) no-repeat center center ",height:"100vh"}}>
     <DemoWrapper>
-      {/* <UserModal /> */}
-      {/* <RobootModal /> */}
-      {/* <BotModal /> */}
-      {/* <AssignRobootModal /> */}
-
       <div className="frame">
         <div>
           <p className="frameText">
@@ -33,6 +30,8 @@ const Demo = () => {
         <img src="/assets/images/demo/demo.png" className="demoImg" />
       </div>
     </DemoWrapper>
+    <Footer />
+    </div>
   );
 };
 

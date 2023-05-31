@@ -87,3 +87,34 @@
   button {
     cursor: pointer;
   }
+
+  .MuiPaper-elevation8 {
+    box-shadow: none !important;
+  }
+
+  .MuiList-padding {
+    padding-top: 0 !important;
+padding-bottom: 0 !important;
+/* padding-top: 8px !important; */
+border-radius: 10px !important;
+  }
+
+  .MuiPaper-root {
+    background-color: transparent !important;
+  }
+
+  /* Dashboard Layout */
+
+  .mainWrapper.collapsed-layout > div{
+    grid-template-columns: 70px calc(100% - 70px);
+  }
+
+  .mainWrapper.collapsed-layout .sidebar{
+    width: 70px;
+  }
+
+  .mainWrapper.collapsed-layout .sidebar .nav-links .items .link_name,
+  .mainWrapper.collapsed-layout .sidebar .nav-links .items .link_name-clicked{
+    opacity: 0;
+    display: none;
+  }

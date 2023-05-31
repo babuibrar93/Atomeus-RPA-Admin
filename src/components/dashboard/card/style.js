@@ -1,14 +1,14 @@
 import { styled } from "styled-components";
 
 export const CardsWrapper = styled.div`
-  display: flex;
-  padding-top: 72px;
+  padding-top: 24px;
   padding-bottom: 30px;
 
   .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: space-between;
-    padding: 24px 3px 3px 36px;
+    padding: 24px 36px;
     gap: 20px;
     z-index: -1;
     flex-wrap: wrap;

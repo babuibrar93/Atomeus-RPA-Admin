@@ -45,8 +45,8 @@ const RobootManagement = () => {
           className="moreVert"
           style={{
             position: "absolute",
-            right: "30px",
-            top: "20.6rem",
+            right: "38px",
+            top: "18.8rem",
             zIndex: 5,
           }}
         >
@@ -57,7 +57,7 @@ const RobootManagement = () => {
 
       <TableWrapper>
         <div className="containerDiv">
-          <div className="row mt-5">
+          <div className="row">
             <div className="mainDiv col-md-12">
               <div className="topDiv">
                 <div className="rightPart">
@@ -138,19 +138,19 @@ const RobootManagement = () => {
                             <div>
                               <img
                                 src="/assets/images/table/moreVert.svg"
-                                // onClick={handleClick}
-                                onClick={() => handleMoreVertModal(openMore)}
+                                onClick={handleClick}
+                                // onClick={() => handleMoreVertModal(openMore)}
                                 className="moreIcon"
                               />
-                              {/* <Menu
+                              <Menu
                                 anchorEl={anchorEl}
                                 keepMounted
                                 onClose={handleClose}
                                 open={openEL}
                                 className="more"
                               >
-                               <MoreVertModal action={handleMoreVertModal} />
-                              </Menu> */}
+                                <MoreVertModal action={handleMoreVertModal} />
+                              </Menu>
                             </div>
                           </div>
                         </td>

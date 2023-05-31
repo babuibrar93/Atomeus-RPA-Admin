@@ -47,8 +47,8 @@ export const DemoWrapper = styled.div`
     align-items: center;
 
     .demoImg {
-      width: 580px;
-      height: 390.61px;
+      width: 500px;
+      height: 350.61px;
 
       @media screen and (max-width:580px){
         width: 380px;

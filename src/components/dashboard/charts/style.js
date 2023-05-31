@@ -76,7 +76,8 @@ export const ChartWrapper = styled.div`
     .leftPart {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 72px;
+      align-items: center;
 
       .nps {
         font-size: 18px;
@@ -150,6 +151,11 @@ export const ChartWrapper = styled.div`
     .bottom-graph {
       width: 80% !important;
       padding: 0 0 !important;
+    }
+    .leftPart {
+      display: flex;
+      flex-direction: column;
+      gap: 32px !important;
     }
   }
   @media (max-width: 900px) {

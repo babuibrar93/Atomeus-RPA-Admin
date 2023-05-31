@@ -4,7 +4,6 @@ import { NavbarWrapper } from "./style";
 const Navbar = () => {
   return (
     <NavbarWrapper>
-      {/* Navbar*/}
       <nav className="navbar navbar-expand-lg fixed">
         <div className="container-fluid justify-content-between">
           <div className="d-flex">
@@ -25,7 +24,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <ul className="navbar-nav flex-row right-items">
+          <div className="navbar-nav flex-row right-items">
             <div className="localization">
               <span>EN</span>
               <img
@@ -45,7 +44,7 @@ const Navbar = () => {
                 </div>
               </a>
             </li>
-          </ul>
+          </div>
         </div>
       </nav>
       {/* Navbar */}

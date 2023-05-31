@@ -3,29 +3,32 @@ import { SidebarWrapper } from "./style";
 import { sidebarData } from ".";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = ({action}) => {
   const navigate = useNavigate();
   const [close, setClose] = useState(false);
 
   const handleSidebar = (arg) => {
     setClose(!arg);
+    action(!arg)
   };
 
   return (
     <SidebarWrapper>
       <div className="sidebar">
         <div className="handBurger">
-          <div></div>
-          <div className="menu">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div className="menu" onClick={() => handleSidebar(close)}>
+            {close ? <img height="20px" width="20px"
+                  src="/assets/images/modal/cross.svg"
+                  className="crossIcon"
+                /> : <><div></div>
+                <div></div>
+                <div></div></>}
+            
           </div>
         </div>
         <div className="logo-details">
-          <i className="bx bxl-c-plus-plus"></i>
           <span className="logo_name">
-            <img src="/assets/images/sidebar/logo.svg" />
+            <img src="/assets/images/sidebar/logoImg.png" height="60px" />
           </span>
         </div>
         <ul className="nav-links">

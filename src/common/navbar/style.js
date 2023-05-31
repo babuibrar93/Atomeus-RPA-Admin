@@ -7,7 +7,7 @@ export const NavbarWrapper = styled.div`
 
   .navbar-expand-lg {
     background: #212036;
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 11;
   }
@@ -42,7 +42,7 @@ export const NavbarWrapper = styled.div`
 
   .search {
     position: relative;
-    margin-left: 17.5rem;
+    margin-left: 0.2rem;
   }
 
   .searchField {

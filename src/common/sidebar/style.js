@@ -5,20 +5,24 @@ export const SidebarWrapper = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 270px;
+    height: 100vh;
+    width: 272px;
     background: #212036;
     z-index: 100;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
   }
 
   .handBurger {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 14px 24px;
     .menu {
-      display: none;
-
+      display: block;
+      height: fit-content;
       cursor: pointer;
       div {
         width: 25px;
@@ -28,22 +32,26 @@ export const SidebarWrapper = styled.div`
       }
     }
   }
-
-  /* .sidebar {
+  .close {
     position: fixed;
     top: 0;
     left: 0;
-    height: 1px;
-    width: 10px;
+    height: 100vh;
+    width: 70px;
     background: #212036;
     z-index: 100;
     transition: all 0.5s ease;
-  } */
+
+    /* .nav-links {
+      display: none;
+    } */
+  }
   .logo-details {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 15px 0;
+    justify-content: center;
+    padding: 5px;
   }
   .logo-details i {
     font-size: 30px;
@@ -56,10 +64,12 @@ export const SidebarWrapper = styled.div`
   /* .logo-details .logo_name {
     margin-top: 10px;
   } */
-  .close .logo-details .logo_name {
+  .logo-details .logo_name {
     transition-delay: 0s;
-    opacity: 0;
-    pointer-events: none;
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
   }
 
   .nav-links {
@@ -171,6 +181,7 @@ export const SidebarWrapper = styled.div`
     line-height: 19px;
     color: #99a2ac;
     transition: all 0.4s ease;
+    white-space: nowrap;
   }
 
   .sidebar .nav-links li a .link_name-clicked {
@@ -325,7 +336,7 @@ export const SidebarWrapper = styled.div`
     font-weight: 600;
   }
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     .sidebar {
       position: fixed;
       top: 0;
@@ -345,5 +356,5 @@ export const SidebarWrapper = styled.div`
     .logo-details {
       display: none;
     }
-  }
+  } */
 `;

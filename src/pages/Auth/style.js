@@ -1,47 +1,12 @@
 import { styled } from "styled-components";
 
 export const AuthWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 55rem;
-  // background-image: url("/assets/images/auth/background.jpg");
-  // background-repeat: no-repeat;
-  // background-size: auto;
-  background:red;
-height: "100vh";
-
-  .firstEllipseDiv {
-    position: relative;
-    .firstEllipse {
-      position: absolute;
-      left: 17rem;
-      top: -7rem;
-    }
-  }
-
-  .secondEllipseDiv {
-    position: relative;
-    .secondEllipse {
-      position: absolute;
-      right: -4rem;
-      top: -54.5rem;
-    }
-  }
-
-  .thirdEllipseDiv {
-    position: relative;
-    .thirdEllipse {
-      position: absolute;
-      right: -5rem;
-      top: -110rem;
-      // border: 1px solid red;
-    }
-  }
+  /* display: flex;
+  flex-direction: column; */
+  /* gap: 55rem; */
 
   .registration {
-    display: flex;
-    flex-direction: column;
-    gap: 55rem;
+    padding: 130px;
   }
 
   .authForm {
@@ -49,12 +14,13 @@ height: "100vh";
     flex-direction: column;
     padding: 24px 24px 45px 24px;
     gap: 40px;
-    position: absolute;
-    width: 420px;
-    left: calc(50% - 420px / 2);
-    top: calc(50% - 480px / 2);
+    /* /* position: absolute; */
+     width: 420px; 
+    /* left: calc(50% - 420px / 2);
+    top: calc(50% - 480px / 2);  */
     background: #212036;
     border-radius: 8px;
+    margin: auto;
 
     .brand {
       display: flex;

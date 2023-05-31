@@ -76,7 +76,7 @@ export const TableWrapper = styled.div`
   }
 
   .containerDiv {
-    padding: 62px 34px 128px 34px;
+    padding: 36px 34px 128px 34px;
   }
 
   .mainDiv {
@@ -239,11 +239,11 @@ export const TableWrapper = styled.div`
   }
 
   .MuiPaper-elevation8 {
-    box-shadow: none;
+    box-shadow: none !important;
   }
-  /* .MuiPaper-root {
-    background-color: none;
-  } */
+  .MuiPopover-paper {
+    background: red !important;
+  }
 
   .actions {
     display: flex;

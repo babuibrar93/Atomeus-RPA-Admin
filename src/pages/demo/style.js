@@ -1,3 +1,4 @@
 import { styled } from "styled-components";
 
-export const WatchDemoWrapper = styled.div``
+export const WatchDemoWrapper = styled.div`
+`
