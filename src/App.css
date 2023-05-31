@@ -83,3 +83,7 @@
     color: #CB1F34;
   }
   /* Errors Ends */
+
+  button {
+    cursor: pointer;
+  }

@@ -56,7 +56,7 @@ export default function DesktopNav() {
                     <span>Contact us</span>
                 </Link>
 
-                <Link to="#" className="language_item">
+                <Link to="/dashboard" className="language_item">
                     <img height="24px" src="/assets/images/header/user.svg" alt="lang sign" />
                     <span>Sign in</span>
                 </Link>

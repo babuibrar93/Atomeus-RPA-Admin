@@ -14,7 +14,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { ChartWrapper } from "./style";
-import { data_FTE, data_NPS, options } from "./index";
+import { data_FTE, data_NPS, options, options_NPS } from "./index";
 import { Container } from "react-bootstrap";
 
 ChartJS.register(
@@ -53,9 +53,7 @@ const Chart = () => {
             </div>
           </div>
           <div className="graph">
-            <span className="response-text">Number of users</span>
-
-            <div><Bar options={options} data={data_FTE} /></div>
+            <Bar options={options} data={data_FTE} />
           </div>
         </div>
 
@@ -63,10 +61,7 @@ const Chart = () => {
           <div className="leftPart">
             <div className="nps">NPS For Organization</div>
 
-            <div
-              style={{ width: 252, height: 252}}
-              className="progressBar"
-            >
+            <div style={{ width: 252, height: 252 }} className="progressBar">
               <CircularProgressbar
                 value={value}
                 maxValue={1}
@@ -77,10 +72,8 @@ const Chart = () => {
           <div className="bottom-graph">
             <div className="heading-one">NPS Over Time</div>
             <div className="graph-content">
-              <div className="response-text">Responses</div>
-              <Bar options={options} data={data_NPS} />
+              <Bar options={options_NPS} data={data_NPS} />
             </div>
-            <div className="month-text">Month</div>
           </div>
         </div>
       </div>

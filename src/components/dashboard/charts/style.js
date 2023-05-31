@@ -15,9 +15,7 @@ export const ChartWrapper = styled.div`
     height: 100%;
     background: #212036;
     .graph {
-    width: 100%;
-      /* display: grid;
-grid-template-columns: 10% calc(100% - 10%); */
+      width: 100%;
       canvas {
         width: 100%;
         height: 410px;
@@ -102,8 +100,8 @@ grid-template-columns: 10% calc(100% - 10%); */
   }
 
   .bottom-graph {
-    width: 72%;
-    padding: 0 120px;
+    width: 100%;
+    padding: 0 30px;
   }
 
   .response-text {
@@ -113,6 +111,9 @@ grid-template-columns: 10% calc(100% - 10%); */
     text-align: center;
     color: #99a2ac;
     transform: rotate(-90deg);
+    position: absolute;
+    left: -43px;
+    top: 15rem;
   }
 
   .graph-content {
@@ -174,5 +175,10 @@ grid-template-columns: 10% calc(100% - 10%); */
         width: 100% !important;
       }
     }
+  }
+
+  .btn-primary {
+    background-color: none !important;
+    border-color: none !important;
   }
 `;

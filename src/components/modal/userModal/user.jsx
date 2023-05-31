@@ -133,8 +133,7 @@ const UserModal = ({ show, action }) => {
 
                   <select
                     className="form-select form-select-sm text-field"
-                    aria-label=".form-select-sm example"
-                    defaultValue="hi"
+                    // aria-label=".form-select-sm example"
                   >
                     <option selected>Select role</option>
                     <option value="1">One</option>

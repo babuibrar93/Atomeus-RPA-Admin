@@ -42,7 +42,7 @@ export const NavbarWrapper = styled.div`
 
   .search {
     position: relative;
-    margin-left: 18.5rem;
+    margin-left: 17.5rem;
   }
 
   .searchField {

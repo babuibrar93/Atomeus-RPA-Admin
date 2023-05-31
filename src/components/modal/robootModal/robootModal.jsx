@@ -71,7 +71,7 @@ const RobootModal = ({ show, action }) => {
                     type="file"
                     name="file-input"
                     id="file-input"
-                    class="file-input__input"
+                    className="file-input__input"
                   />
                   <label for="file-input">
                     <span
